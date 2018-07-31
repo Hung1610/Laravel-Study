@@ -31,21 +31,21 @@
 
 			    <ul class="nav navbar-nav pull-right">
                     <li>
-                        <a href="#">Đăng ký</a>
+                        <a href="{{route('register')}}">Đăng ký</a>
                     </li>
                     <li>
-                        <a href="#">Đăng nhập</a>
+                        <a href="{{route('login')}}">Đăng nhập</a>
                     </li>
-                    <li>
+                    <!--<li>
                     	<a>
                     		<span class ="glyphicon glyphicon-user"></span>
                     		Nguyễn Văn Thành
                     	</a>
-                    </li>
+                    </li>-->
 
-                    <li>
+                    <!--<li>
                     	<a href="#">Đăng xuất</a>
-                    </li>
+                    </li>-->
 
                 </ul>
             </div>

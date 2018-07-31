@@ -14,6 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('index',function(){
-  return view('index');
-});
+
+Route::get('index','mainController@getTrangChu');
+
+Route::get('dangnhap','xuLyAuthController@getLogin')->name('login');
+Route::post('dangnhap','xuLyAuthController@postLogin')->name('postlogin');
+
+Route::get('dangky','xuLyAuthController@getRegister')->name('register');
+Route::post('dangky','xuLyAuthController@postRegister')->name('postregister');
