@@ -11,10 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //$this->call(contentSeeder::class);
-        //$this->call(subCategorySeeder::class);
-        //$this->call(categorySeeder::class);
-        $this->call(usersSeeder::class);
+        $this->call(contentSeeder::class);
+        $this->call(subCategorySeeder::class);
+        $this->call(categorySeeder::class);
+        //$this->call(usersSeeder::class);
     }
 
 
@@ -55,8 +55,8 @@ class categorySeeder extends Seeder{
 class usersSeeder extends Seeder{
   public function run(){
     DB::table('users')->insert([
-      ['name'=>'binkaa2','password'=>bcrypt('054882762'),'email'=>'binkaa1@gmail.com','check'=>'1'],
-      ['name'=>'cpt.macmilan2','password'=>bcrypt('Ngan1996'),'email'=>'nganhoang@gmail.com','check'=>'1'],
+      ['name'=>'binkaa2','password'=>bcrypt('054882762'),'email'=>'binkaa1@gmail.com','is_admin'=>'1'],
+      ['name'=>'cpt.macmilan2','password'=>bcrypt('Ngan1996'),'email'=>'nganhoang@gmail.com','is_admin'=>'1'],
     ]);
   }
 }
