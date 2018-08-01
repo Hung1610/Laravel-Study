@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('frontend.layouts.default')
 @section('content')
 <div class="panel panel-default">
 	            	<div class="panel-heading" style="background-color:#337AB7; color:white;" >

@@ -53,3 +53,12 @@ a:hover{
 .clear{
 	clear:both;
 }
+.navchinh{
+  font-family: "Lato", sans-serif;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	background-color: #000 !important;
+}
+.amain:hover{
+		color:#000!important;
+		background-color:#ccc!important;
+}

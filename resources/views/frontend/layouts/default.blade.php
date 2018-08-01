@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    @include('includes.head')
+    @include('frontend.includes.head')
   </head>
   <body>
-    @include('includes.header')
+    @include('frontend.includes.header')
     <!-- Page Content -->
    <div class="container">
-     @include('includes.left')
+     @include('frontend.includes.left')
      <div class="col-md-9">
        @yield('content')
      </div>
@@ -15,6 +15,6 @@
        <!-- /.row -->
    </div>
    <!-- end Page Content -->
-   @include('includes.footer')
+   @include('frontend.includes.footer')
   </body>
 </html>
