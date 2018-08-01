@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('index','mainController@getTrangChu');
+Route::get('/','mainController@getTrangChu');
 
 Route::get('dangnhap','xuLyAuthController@getLogin')->name('login');
 Route::post('dangnhap','xuLyAuthController@postLogin')->name('postlogin');
