@@ -40,8 +40,15 @@
           </form>
         </div>
         <div class="cta"><a href="">Forgot your password?</a></div>
+      @if(Session::get('loi'))
+      <div class="alert alert-danger" role="alert">
+        {{Session::get('loi')}}
+      </div>
+      @endif
       </div>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
           <script  src="js/index.js"></script>
+
+
   </body>
 </html>
