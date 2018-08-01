@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="{{ asset('template/admin/dist/css/adminlte.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  @yield('title')
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -64,7 +65,7 @@ to get the desired effect
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
+  @yield('content')
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
