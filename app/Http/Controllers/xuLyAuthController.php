@@ -9,7 +9,7 @@ use App\User;
 class xuLyAuthController extends Controller
 {
   public function getLogin(){
-    return view('pages.login');
+    return view('frontend.pages.login');
   }
   //xu ly login
   public function postLogin(Request $request){
@@ -26,7 +26,7 @@ class xuLyAuthController extends Controller
 
 
   public function getRegister(){
-    return view('pages.register');
+    return view('frontend.pages.register');
   }
   public function postRegister(Request $request){
     $user = new User;

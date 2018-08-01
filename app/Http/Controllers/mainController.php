@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class mainController extends Controller
 {
     public function getTrangChu(){
-      return view('index');
+      return view('frontend.index');
     }
 
 }
