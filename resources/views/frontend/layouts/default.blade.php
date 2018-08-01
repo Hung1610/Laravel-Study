@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    @include('frontend.includes.head')
+    @include('frontend.includes.head')c
   </head>
   <body>
     @include('frontend.includes.header')
