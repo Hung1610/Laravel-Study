@@ -17,7 +17,7 @@ class CreateSubContentCategory extends Migration
             $table->increments('id');
             $table->string('name',100);
             $table->string('alias',100);
-            $table->integer('content_category_id')->unsigned();
+            $table->integer('category_id')->unsigned();
         });
     }
 

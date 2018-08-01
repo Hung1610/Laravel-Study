@@ -23,6 +23,7 @@ class CreateContentTable extends Migration
             $table->string('alias',200);
             $table->integer('views');
             $table->integer('user_id')->unsigned();
+            $table->integer('sub_category_id')->unsigned();
         });
     }
 
