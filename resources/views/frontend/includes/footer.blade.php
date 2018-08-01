@@ -1,11 +1,7 @@
 <!-- Footer -->
    <hr>
    <footer>
-       <div class="row">
-           <div class="col-md-12">
-               <p>Copyright &copy; Your Website 2014</p>
-           </div>
-       </div>
+        <p style="text-align: center;">Copyright &copy; Your Website 2014</p>
    </footer>
    <!-- end Footer -->
    <!-- jQuery -->
