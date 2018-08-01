@@ -1,9 +1,10 @@
 @extends('frontend.layouts.default')
 @section('content')
+<div class="alert alert-info" style="text-align:center;margin-bottom: 1%;" role="alert">
+  Bản Tin
+</div>
 <div class="panel panel-default">
-	            	<div class="panel-heading" style="background-color:#337AB7; color:white;" >
-	            		<h2 style="margin-top:0px; margin-bottom:0px;">Laravel Tin Tức</h2>
-	            	</div>
+
 
 	            	<div class="panel-body">
 	            		<!-- item -->

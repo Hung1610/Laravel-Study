@@ -33,11 +33,12 @@
 
 
         <div class="row main-left">
+
             <div class="col-md-3 ">
                 <ul class="list-group" id="menu">
-                    <li href="#" class="list-group-item menu1 active">
-                    	Menu
-                    </li>
+                  <div class="alert alert-success" style="margin-bottom:0%;" role="alert">
+                    Menu
+                  </div>
 
                     <li href="#" class="list-group-item menu1">
                     	Level 1
