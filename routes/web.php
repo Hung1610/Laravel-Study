@@ -22,3 +22,7 @@ Route::post('dangnhap','xuLyAuthController@postLogin')->name('postlogin');
 
 Route::get('dangky','xuLyAuthController@getRegister')->name('register');
 Route::post('dangky','xuLyAuthController@postRegister')->name('postregister');
+
+Route::get('admin', function(){
+    return view('admin.layouts.app');
+});
