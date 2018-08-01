@@ -15,7 +15,7 @@
 //     return view('welcome');
 // });
 
-Route::get('/','mainController@getTrangChu');
+Route::get('index','mainController@getTrangChu')->name('index');
 
 Route::get('dangnhap','xuLyAuthController@getLogin')->name('login');
 Route::post('dangnhap','xuLyAuthController@postLogin')->name('postlogin');
