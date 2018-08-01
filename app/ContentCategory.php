@@ -7,10 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ContentCategory extends Model
 {
     //
-    public function __construct(ContentCategory $model)
-    {
-        $this->model    = $model;
-    }
+    protected $table = 'ContentCategory';
     
     protected $fillable = [
         'name',

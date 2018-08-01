@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\ContentCategory;
 
-class ContentCategoryController extends Controller
+class SubContentCategoryController extends Controller
 {
-    
-    public function __construct(ContentCategory $model)
+    public function __construct(SubContentCategory $model)
     {
         $this->model    = $model;
     }

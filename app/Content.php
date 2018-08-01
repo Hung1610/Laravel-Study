@@ -7,10 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Content extends Model
 {
     //
-    public function __construct(Content $model)
-    {
-        $this->model    = $model;
-    }
+    protected $table = 'Content';
     
     protected $fillable = [
         'title',

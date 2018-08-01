@@ -3,16 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\ContentCategory;
 
-class ContentCategoryController extends Controller
+class CommentController extends Controller
 {
-    
-    public function __construct(ContentCategory $model)
+    public function __construct(Comment $model)
     {
         $this->model    = $model;
-    }
-    /**
+    }/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
