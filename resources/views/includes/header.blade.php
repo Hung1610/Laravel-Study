@@ -29,6 +29,20 @@
 			        <button type="submit" class="btn btn-default">Submit</button>
 			    </form>
 
+          @if(Session::get('user'))
+           <ul class="nav navbar-nav pull-right">
+          <li>
+            <a>
+              <span class ="glyphicon glyphicon-user"></span>
+              {{Session::get('user')->name}}
+            </a>
+          </li>-->
+
+          <li>
+            <a href="{{route('logout')}}">Đăng xuất</a>
+          </li>
+            </ul>
+          @else
 			    <ul class="nav navbar-nav pull-right">
                     <li>
                         <a href="{{route('register')}}">Đăng ký</a>
@@ -36,18 +50,8 @@
                     <li>
                         <a href="{{route('login')}}">Đăng nhập</a>
                     </li>
-                    <!--<li>
-                    	<a>
-                    		<span class ="glyphicon glyphicon-user"></span>
-                    		Nguyễn Văn Thành
-                    	</a>
-                    </li>-->
-
-                    <!--<li>
-                    	<a href="#">Đăng xuất</a>
-                    </li>-->
-
                 </ul>
+        @endif
             </div>
 
 

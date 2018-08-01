@@ -21,12 +21,12 @@
         </div>
         <div class="form">
           <h2>Create an account</h2>
-          <form>
+          <form method="post" action="{{route('postregister')}}">
             @csrf
-            <input type="text" placeholder="Username"/>
-            <input type="password" placeholder="Password"/>
-            <input type="email" placeholder="Email Address"/>
-            <input type="text" placeholder="Address"/>
+            <input type="text" name="username" placeholder="Username"/>
+            <input type="password" name="password" placeholder="Password"/>
+            <input type="email" name="email" placeholder="Email Address"/>
+            <input type="text" name="address" placeholder="Address"/>
             <button>Register</button>
           </form>
         </div>

@@ -19,6 +19,7 @@ Route::get('index','mainController@getTrangChu')->name('index');
 
 Route::get('dangnhap','xuLyAuthController@getLogin')->name('login');
 Route::post('dangnhap','xuLyAuthController@postLogin')->name('postlogin');
+Route::get('dangxuat','xuLyAuthController@logout')->name('logout');
 
 Route::get('dangky','xuLyAuthController@getRegister')->name('register');
 Route::post('dangky','xuLyAuthController@postRegister')->name('postregister');
