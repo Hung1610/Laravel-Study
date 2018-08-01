@@ -13,7 +13,13 @@
     <link href="css/shop-homepage.css" rel="stylesheet">
     <link href="css/my.css" rel="stylesheet">
 
-    
+    <!--font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--khai bao duong dan-->
+    <base href="{{asset('')}}">
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
