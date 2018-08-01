@@ -13,7 +13,7 @@
     <link href="css/shop-homepage.css" rel="stylesheet">
     <link href="css/my.css" rel="stylesheet">
 
-
+    
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

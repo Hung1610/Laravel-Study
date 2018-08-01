@@ -9,7 +9,5 @@ class mainController extends Controller
     public function getTrangChu(){
       return view('index');
     }
-    public function login(){
-      return view('pages.login');
-    }
+
 }
