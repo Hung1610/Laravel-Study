@@ -31,11 +31,11 @@
           </form>
         </div>
         <div class="form">
-          @csrf
           <h2>Login to your account</h2>
-          <form method="post" action="">
-            <input type="text" placeholder="Username"/>
-            <input type="password" placeholder="Password"/>
+          <form method="post" action="{{route('postlogin')}}">
+            @csrf
+            <input type="text" name="username" placeholder="Username"/>
+            <input type="password" name="password" placeholder="Password"/>
             <button>Login</button>
           </form>
         </div>
