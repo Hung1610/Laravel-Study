@@ -45,12 +45,12 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $date = strtotime('1998-01-02');
+        $date = date('Y-m-d',strtotime($request->content_date));
         $request->merge([
             'img'           => '',
             'alias'         => '',
             'user_id'       => 1,
-            'date_content'  => $date,
+            'content_date'  => $date,
             'sub_category_id'       => 1,
         ]);
         // dd(route($this->model->route .'.index'), $request->all());
