@@ -20,16 +20,16 @@
         <div class="toggle"><i class="fa fa-times fa-pencil"></i>
         </div>
         <div class="form">
-          <h2>Login to your account</h2>
+          <h2>Đăng Nhập</h2>
           <form method="post" action="{{route('postlogin')}}">
             @csrf
-            <input type="text" name="username" placeholder="Username"/>
-            <input type="password" name="password" placeholder="Password"/>
+            <input type="text" name="username" placeholder="Tên Người Dùng"/>
+            <input type="password" name="password" placeholder="Mật Khẩu"/>
             <button>Login</button>
           </form>
         </div>
         <div class="form">
-          <h2>Create an account</h2>
+          <h2>Tạo Tài Khoản</h2>
           <form method="post" action="{{route('postregister')}}">
             @csrf
             <input type="text" name="username" placeholder="Username"/>
@@ -39,7 +39,7 @@
             <button>Register</button>
           </form>
         </div>
-        <div class="cta"><a href="">Forgot your password?</a></div>
+        <div class="cta"><a href="">Quên Mật Khẩu?</a></div>
       @if(Session::get('loi'))
       <div class="alert alert-danger" role="alert">
         {{Session::get('loi')}}
