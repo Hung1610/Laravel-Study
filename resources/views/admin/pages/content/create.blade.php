@@ -7,7 +7,7 @@
   </div>
   <!-- /.card-header -->
   <!-- form start -->
-  <form name="frm_content" action="{{ route('contents.store') }}" method="POST">
+  <form name="frm_content" action="{{ route($model . '.store') }}" method="POST">
     @csrf
     <div class="card-body">
       <div class="form-group">
@@ -21,7 +21,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-calendar"></i></span>
           </div>
-          <input id="content_date" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+          <input name="content_date" id="content_date" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask >
         </div>
       </div>
       {{-- /DATE-MASK --}}

@@ -20,6 +20,7 @@ class ContentController extends Controller
     {
         return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.index', [
             'data_table' =>   $this->model->paginate(10),
+            'model'      =>   $this->model->route,
         ]);
     }
 
@@ -30,7 +31,9 @@ class ContentController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.content.create');
+        return view('admin.pages.content.create',[
+            'model'      =>   $this->model->route,
+        ]);
     }
 
     /**
@@ -42,17 +45,17 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        $date = strtotime('1998-01-02');
         $request->merge([
-            'content_date'  => '1998-01-02',
             'img'           => '',
             'alias'         => '',
-            'views'         => '',
             'user_id'       => 1,
-            'sub_category_id'       => '',
+            'date_content'  => $date,
+            'sub_category_id'       => 1,
         ]);
-        // dd($request->all());
+        // dd(route($this->model->route .'.index'), $request->all());
         Content::create($request->all());
-        return route($this->model->route .'index');
+        return redirect()->route($this->model->route .'.index');
     }
 
     /**

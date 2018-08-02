@@ -27,10 +27,10 @@ Route::post('dangky','xuLyAuthController@postRegister')->name('postregister');
 
 
 Route::prefix('admin')->group(function () {
-    Route::resource('comments', 'CommentController');
-    Route::resource('contents', 'ContentController');
-    Route::resource('content-categories', 'ContentCategoryController');
-    Route::resource('sub-content-categories', 'SubContentCategoryController');
-    Route::resource('users', 'UserController');
+    Route::resource('comment', 'CommentController');
+    Route::resource('content', 'ContentController');
+    Route::resource('content-category', 'ContentCategoryController');
+    Route::resource('sub-content-category', 'SubContentCategoryController');
+    Route::resource('user', 'UserController');
 });
 Route::get('about','mainController@getGioiThieu')->name('gioithieu');
