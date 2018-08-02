@@ -2,6 +2,7 @@
 @section('title', 'CONTENT-CATEGORY')
 
 @section('content')
+<a href="{{ route('contents.create') }}">Them bai viet</a>
 {{ $data_table->links() }}
 <div class="card">
   <div class="card-header">

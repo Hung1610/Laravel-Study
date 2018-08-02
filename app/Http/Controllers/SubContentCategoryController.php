@@ -6,10 +6,6 @@ use Illuminate\Http\Request;
 
 class SubContentCategoryController extends Controller
 {
-    public function __construct(SubContentCategory $model)
-    {
-        $this->model    = $model;
-    }
     /**
      * Display a listing of the resource.
      *

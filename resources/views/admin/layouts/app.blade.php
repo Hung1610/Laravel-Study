@@ -75,9 +75,7 @@ to get the desired effect
   @include('admin.includes.footer')
 </div>
 <!-- ./wrapper -->
-
 <!-- REQUIRED SCRIPTS -->
-
 <!-- jQuery -->
 <script src="{{ asset('template/admin/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap -->
@@ -89,5 +87,6 @@ to get the desired effect
 <script src="{{ asset('template/admin/plugins/chart.js/Chart.min.js') }}"></script>
 <script src="{{ asset('template/admin/dist/js/demo.js') }}"></script>
 <script src="{{ asset('template/admin/dist/js/pages/dashboard3.js') }}"></script>
+@stack('scripts')
 </body>
 </html>
