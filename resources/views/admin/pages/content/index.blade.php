@@ -8,7 +8,7 @@
   <div class="card-header">
     <h3 class="card-title">Condensed Full Width Table</h3>
   </div>
-  <!-- /.card-header -->
+
   <div class="card-body p-0">
     <table class="table table-bordered">
       <tr>
@@ -18,6 +18,8 @@
         <th style="width: 40px"></th>
         <th style="width: 40px"></th>
       </tr>
+
+      {{-- FOR-EACH --}}
       @foreach($data_table as $index => $data)
       <tr>
         <td>{{ $index+1 }}</td>
@@ -30,6 +32,7 @@
               </div>
             </a>
         </td>
+        {{-- DELETE-BNT --}}
         <td>
           <form method="POST" action="{{ route('contents.destroy', $data->id) }}">
             {{ csrf_field() }}
@@ -37,8 +40,10 @@
               <button type="submit" class="btn btn-danger"><i class="fa fa-remove"></i></button>
             </form>
         </td>
+        {{-- /DELETE-BNT --}}
       </tr>
       @endforeach
+      {{-- /Foreach --}}
     </table>
   </div>
   <!-- /.card-body -->
