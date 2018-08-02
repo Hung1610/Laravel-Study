@@ -43,7 +43,7 @@
         {{-- /DELETE-BNT --}}
       </tr>
       @endforeach
-      {{-- /Foreach --}}
+      {{-- /END FOR-EACH --}}
     </table>
   </div>
   <!-- /.card-body -->
