@@ -88,6 +88,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->model::find($id)->delete();
+        return redirect()->route('users.index')->with('thongbao','Đã Xóa Thành Công');
     }
 }

@@ -28,13 +28,24 @@
             </div>
         </td>
         <td>
-            <div onclick="window.location.href = '{{ url(config('controller.prefix_url') ) }}';" class="btn btn-danger btn-margin" title='Cập nhật'>
-                <i class="fa fa-remove" aria-hidden="true"></i>
-            </div>
+
+            <form class="" action="users/{{$data->id}}" method="post">
+              @csrf
+              {{ method_field('DELETE') }}
+              <button type="submit" class="btn btn-danger btn-margin">
+                  <i class="fa fa-remove" aria-hidden="true"></i>
+              </button>
+            </form>
+
         </td>
       </tr>
       @endforeach
     </table>
+    @if(Session::get('thongbao'))
+    <div class="alert alert-danger" role="alert">
+      {{Session::get('thongbao')}}
+    </div>
+    @endif
   </div>
   <!-- /.card-body -->
 </div>
