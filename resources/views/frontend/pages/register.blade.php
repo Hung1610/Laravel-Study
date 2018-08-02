@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-
     <div class="container">
       <!-- Form Mixin-->
       <!-- Input Mixin-->
@@ -21,13 +20,13 @@
         </div>
         <div class="form">
           <h2>Create an account</h2>
-          <form method="post" action="{{route('postregister')}}">
+          <form method="post" id="apply" action="{{route('postregister')}}">
             @csrf
             <input type="text" name="name" placeholder="Username" required/>
-            <input type="password" name="password" placeholder="Password" required/>
+            <input type="password" name="password" placeholder="Password"/>
             <input type="email" name="email" placeholder="Email Address" required/>
             <input type="text" name="address" placeholder="Address" required/>
-            <button>Register</button>
+            <button id="button-register">Register</button>
           </form>
         </div>
         <div class="form">
