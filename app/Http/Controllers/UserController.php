@@ -31,7 +31,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        dd("test");
+        return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.create');
     }
 
     /**

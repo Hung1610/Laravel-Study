@@ -18,7 +18,9 @@ class ContentController extends Controller
      */
     public function index()
     {
-        return view(config('controller.prefix_view') . config('controller.folder') . $this->model->table . '.index');
+        return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.index', [
+            'data_table' =>   $this->model->paginate(10),
+        ]);
     }
 
     /**
@@ -28,7 +30,7 @@ class ContentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.content.create');
     }
 
     /**

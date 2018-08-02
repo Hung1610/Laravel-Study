@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Content extends Model
 {
     //
-    public $table = 'Content';
+    protected $table = 'Content';
+    public $route = 'content';
     
     protected $fillable = [
         'title',
