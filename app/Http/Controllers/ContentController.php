@@ -41,7 +41,18 @@ class ContentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $request->merge([
+            'content_date'  => '1998-01-02',
+            'img'           => '',
+            'alias'         => '',
+            'views'         => '',
+            'user_id'       => 1,
+            'sub_category_id'       => '',
+        ]);
+        // dd($request->all());
+        Content::create($request->all());
+        return route($this->model->route .'index');
     }
 
     /**

@@ -24,14 +24,18 @@
         <td>{{ $data->title }}</td>
         <td>{{ $data->views }}</td>
         <td>
-            <div onclick="window.location.href = '{{ url(config('controller.prefix_url') ) }}';" class="btn btn-primary btn-margin" title='Chi tiết'>
+            <a href="">
+              <div class="btn btn-primary btn-margin" title='Cập nhật'>
                 <i class="fa fa-pencil" aria-hidden="true"></i>
-            </div>
+              </div>
+            </a>
         </td>
         <td>
-            <div onclick="window.location.href = '{{ url(config('controller.prefix_url') ) }}';" class="btn btn-danger btn-margin" title='Cập nhật'>
-                <i class="fa fa-remove" aria-hidden="true"></i>
-            </div>
+          <form method="POST" action="{{ route('contents.destroy', $data->id) }}">
+            {{ csrf_field() }}
+              {{ method_field("DELETE") }}
+              <button type="submit" class="btn btn-danger"><i class="fa fa-remove"></i></button>
+            </form>
         </td>
       </tr>
       @endforeach

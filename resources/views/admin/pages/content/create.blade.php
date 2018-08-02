@@ -7,18 +7,19 @@
   </div>
   <!-- /.card-header -->
   <!-- form start -->
-  <form role="form">
+  <form name="frm_content" action="{{ route('contents.store') }}" method="POST">
+    @csrf
     <div class="card-body">
       <div class="form-group">
         <label for="title">Title</label>
-        <input type="email" name="title" class="form-control" id="title" placeholder="enter title">
+        <input type="text" name="title" class="form-control" id="title" placeholder="enter title">
       </div>
       <div class="mb-3">
         <label for="content">Content</label>
         <textarea id="content" name="content" style="width: 100%">This is my textarea to be replaced with CKEditor.</textarea>
       </div>
       <div class="form-check">
-        <input type="checkbox" name="is_trend" class="form-check-input" id="is_trend">
+        <input type="checkbox" name="is_trend" class="form-check-input" id="is_trend" checked? value="1": value="0">
         <label class="form-check-label" for="is_trend">tin noi bat</label>
       </div>
     </div>
