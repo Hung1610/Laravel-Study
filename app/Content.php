@@ -9,7 +9,8 @@ class Content extends Model
     //
     protected $table = 'Content';
     public $route = 'content';
-    
+    public $timestamps = false;
+
     protected $fillable = [
         'title',
         'content',
@@ -19,6 +20,6 @@ class Content extends Model
         'alias',
         'views',
         'user_id',
-        'sub_category',
+        'sub_category_id',
     ];
 }
