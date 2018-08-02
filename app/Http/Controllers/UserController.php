@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\User;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\registerRequest;
 
 class UserController extends Controller
 {
@@ -31,7 +32,6 @@ class UserController extends Controller
      */
     public function create()
     {
-        dd("test");
         return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.create');
     }
 
@@ -41,9 +41,18 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RegisterRequest $request)
     {
         //
+        $validate = $request->validated();
+        $user = new $this->model;
+        $user->name= $request->name;
+        $user->email= $request->email;
+        $user->password = bcrypt($request->password);
+        $user->address = $request->address;
+        $user->is_admin = 0;
+        $user->save();
+        return redirect()->route('users.index')->with('thongbao','Thêm Thành Công');
     }
 
     /**
@@ -88,6 +97,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->model::find($id)->delete();
+        return redirect()->route('users.index')->with('thongbao','Đã Xóa Thành Công');
     }
 }
