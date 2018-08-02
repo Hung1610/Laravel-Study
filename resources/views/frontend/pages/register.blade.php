@@ -23,10 +23,10 @@
           <h2>Create an account</h2>
           <form method="post" action="{{route('postregister')}}">
             @csrf
-            <input type="text" name="username" placeholder="Username"/>
-            <input type="password" name="password" placeholder="Password"/>
-            <input type="email" name="email" placeholder="Email Address"/>
-            <input type="text" name="address" placeholder="Address"/>
+            <input type="text" name="name" placeholder="Username" required/>
+            <input type="password" name="password" placeholder="Password" required/>
+            <input type="email" name="email" placeholder="Email Address" required/>
+            <input type="text" name="address" placeholder="Address" required/>
             <button>Register</button>
           </form>
         </div>
@@ -34,12 +34,17 @@
           <h2>Login to your account</h2>
           <form method="post" action="{{route('postlogin')}}">
             @csrf
-            <input type="text" name="username" placeholder="Username"/>
-            <input type="password" name="password" placeholder="Password"/>
+            <input type="text" name="username" placeholder="Username" required/>
+            <input type="password" name="password" placeholder="Password" required/>
             <button>Login</button>
           </form>
         </div>
         <div class="cta"><a href="">Forgot your password?</a></div>
+        @foreach($errors->all() as $error)
+          <div class="alert alert-danger" style="margin-bottom: 0%;" role="alert">
+            {{$error}}
+          </div>
+        @endforeach
       </div>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
           <script  src="js/index.js"></script>
