@@ -22,6 +22,7 @@ class UserController extends Controller
         // $data_table = $this->model->paginate();
         return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.index', [
             'data_table' =>   $this->model->paginate(10),
+            'model'      =>   $this->model->route,
         ]);
     }
 
@@ -32,7 +33,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.create');
+        return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.create',[
+            'model'      =>   $this->model->route,]);
     }
 
     /**
@@ -52,7 +54,8 @@ class UserController extends Controller
         $user->address = $request->address;
         $user->is_admin = 0;
         $user->save();
-        return redirect()->route('users.index')->with('thongbao','Thêm Thành Công');
+        return redirect()->route('user.index')->with('thongbao','Thêm Thành Công',[
+            'model'      =>   $this->model->route,]);
     }
 
     /**
@@ -65,7 +68,8 @@ class UserController extends Controller
     {
         //
       $user = $this->model::find($id);
-      return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.edit',['user'=>$user]);
+      return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.edit',['user'=>$user],[
+        'model'      =>   $this->model->route,]);
     }
 
     /**
@@ -117,7 +121,7 @@ class UserController extends Controller
             $user->address=$request->address;
             $user->save();
         }
-        return redirect()->route('users.index')->with('thongbao','Cập Nhập Thành Công');
+        return redirect()->route('user.index')->with('thongbao','Cập Nhập Thành Công');
     }
 
     /**
@@ -129,6 +133,6 @@ class UserController extends Controller
     public function destroy($id)
     {
         $this->model::find($id)->delete();
-        return redirect()->route('users.index')->with('thongbao','Đã Xóa Thành Công');
+        return redirect()->route('user.index')->with('thongbao','Đã Xóa Thành Công');
     }
 }

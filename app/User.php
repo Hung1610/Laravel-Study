@@ -16,7 +16,7 @@ class User extends Authenticatable
      */
     // 
     protected   $table = 'users';
-    public      $route = 'User';
+    public      $route = 'user';
 
     protected $fillable = [
         'name',

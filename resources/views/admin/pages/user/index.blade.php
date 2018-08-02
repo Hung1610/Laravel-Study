@@ -25,12 +25,12 @@
         <td>{{ $data->email }}</td>
         <td>{{ $data->address}}
         <td>
-            <a href="{{route('users.show',$data->id)}}"class="btn btn-success btn-margin" title="Sửa">
+            <a href="{{route($model.'.show',$data->id)}}"class="btn btn-success btn-margin" title="Sửa">
                 <i class="fa fa-pencil" aria-hidden="true"></i>
             </a>
         </td>
         <td>
-            <form class="" action="users/{{$data->id}}" method="post">
+            <form class="" action="{{ $model . '/' . $data->id }}" method="post">
               @csrf
               {{ method_field('DELETE') }}
               <button type="submit" class="btn btn-danger btn-margin" title="Xóa">

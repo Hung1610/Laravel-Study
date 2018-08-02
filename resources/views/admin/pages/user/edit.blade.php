@@ -25,7 +25,7 @@
                   {{Session::get('thongbao')}}
                 </div>
               @endif
-                <form action="{{route('users.update',$user->id)}}" method='post'>
+                <form action="{{route($model . '.update',$user->id)}}" method='post'>
                     @csrf
                     {{ method_field('PUT') }}
                     <div class="form-group">

@@ -25,7 +25,7 @@
                   {{Session::get('thongbao')}}
                 </div>
               @endif
-                <form action="{{route('users.store')}}" method="post">
+                <form action="{{route($model . '.store')}}" method="post">
                     @csrf
                     <div class="form-group">
                         <label>Tên User</label>
