@@ -6,7 +6,7 @@
               style="opacity: .8">
         <span class="brand-text font-weight-light">AdminLTE 3</span>
       </a>
-  
+
       <!-- Sidebar -->
       <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
@@ -18,7 +18,7 @@
             <a href="#" class="d-block">Alexander Pierce</a>
           </div>
         </div>
-  
+
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -28,7 +28,7 @@
               <a href="#" class="nav-link ">
                 <i class="nav-icon fa fa-dashboard"></i>
                 <p>
-                  Tac vu nhanh
+                  Content Category
                   <i class="right fa fa-angle-left"></i>
                 </p>
               </a>
@@ -36,17 +36,87 @@
                 <li class="nav-item">
                   <a href="./index.html" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Them bai viet</p>
+                    <p>Danh Sách</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="./index2.html" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Quan li nguoi dung</p>
+                    <p>Thêm</p>
                   </a>
                 </li>
               </ul>
             </li>
+            <li class="nav-item has-treeview menu-collapsed">
+              <a href="#" class="nav-link ">
+                <i class="nav-icon fa fa-dashboard"></i>
+                <p>
+                  Sub Content Category
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./index.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Danh Sách</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./index2.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Thêm</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview menu-collapsed">
+              <a href="#" class="nav-link ">
+                <i class="nav-icon fa fa-dashboard"></i>
+                <p>
+                Content
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./index.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Danh Sách</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./index2.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Thêm</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview menu-collapsed">
+              <a href="#" class="nav-link ">
+                <i class="nav-icon fa fa-dashboard"></i>
+                <p>
+                  Quản Lý User
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Danh Sách</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./index2.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Thêm</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!--
             <li class="nav-item has-treeview menu-open">
               <a href="#" class="nav-link active">
                 <i class="nav-icon fa fa-dashboard"></i>
@@ -82,6 +152,7 @@
                 </li>
               </ul>
             </li>
+          -->
             {{-- single-item --}}
             <li class="nav-item">
               <a href="pages/widgets.html" class="nav-link">

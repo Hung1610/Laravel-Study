@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#" class="amain">Giới thiệu</a>
+                        <a href="{{route('gioithieu')}}" class="amain">Giới thiệu</a>
                     </li>
                     <li>
                         <a href="#" class="amain">Liên hệ</a>
@@ -36,7 +36,7 @@
               <span class ="glyphicon glyphicon-user"></span>
               {{Session::get('user')->name}}
             </a>
-          </li>-->
+          </li>
 
           <li>
             <a class="amain" href="{{route('logout')}}">Đăng xuất</a>
