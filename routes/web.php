@@ -16,6 +16,7 @@
 // });
 
 Route::get('index','mainController@getTrangChu')->name('index');
+Route::get('admin','mainController@getAdmin')->name('admin');
 
 Route::get('dangnhap','xuLyAuthController@getLogin')->name('login');
 Route::post('dangnhap','xuLyAuthController@postLogin')->name('postlogin');
@@ -24,9 +25,7 @@ Route::get('dangxuat','xuLyAuthController@logout')->name('logout');
 Route::get('dangky','xuLyAuthController@getRegister')->name('register');
 Route::post('dangky','xuLyAuthController@postRegister')->name('postregister');
 
-Route::get('admin', function(){
-    return view('admin.layouts.app');
-});
+
 Route::prefix('admin')->group(function () {
     Route::resource('comments', 'CommentController');
     Route::resource('contents', 'ContentController');
