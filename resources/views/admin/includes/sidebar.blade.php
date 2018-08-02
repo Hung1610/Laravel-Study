@@ -103,13 +103,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{route('users.index')}}" class="nav-link">
+                  <a href="{{route('user.index')}}" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>Danh Sách</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{route('users.create')}}" class="nav-link">
+                  <a href="{{route('user.create')}}" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>Thêm</p>
                   </a>

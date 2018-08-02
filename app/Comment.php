@@ -8,6 +8,7 @@ class Comment extends Model
 {
     //
     protected $table = 'Comment';
+    public $route = 'comment';
     
     protected $fillable = [
         'content',

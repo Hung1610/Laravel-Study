@@ -2,7 +2,7 @@
 @section('title', 'CONTENT-CATEGORY')
 
 @section('content')
-<a href="{{ route('contents.create') }}">Them bai viet</a>
+<a href="{{ route($model . '.create') }}">Them bai viet</a>
 {{ $data_table->links() }}
 <div class="card">
   <div class="card-header">
@@ -34,7 +34,7 @@
         </td>
         {{-- DELETE-BNT --}}
         <td>
-          <form method="POST" action="{{ route('contents.destroy', $data->id) }}">
+          <form method="POST" action="{{ route($model . '.destroy', $data->id) }}">
             {{ csrf_field() }}
               {{ method_field("DELETE") }}
               <button type="submit" class="btn btn-danger"><i class="fa fa-remove"></i></button>
