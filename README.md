@@ -9,4 +9,4 @@
 
 ## About this project
 
-idk,just pls.jk.
+Hi , im creating pure laravel project about reading site . so much to learn now..
