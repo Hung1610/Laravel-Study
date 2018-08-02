@@ -23,8 +23,8 @@
           <h2>Đăng Nhập</h2>
           <form method="post" action="{{route('postlogin')}}">
             @csrf
-            <input type="text" name="username" placeholder="Tên Người Dùng"/>
-            <input type="password" name="password" placeholder="Mật Khẩu"/>
+            <input type="text" name="username" placeholder="Tên Người Dùng" required/>
+            <input type="password" name="password" placeholder="Mật Khẩu" required/>
             <button>Login</button>
           </form>
         </div>
@@ -32,16 +32,16 @@
           <h2>Tạo Tài Khoản</h2>
           <form method="post" action="{{route('postregister')}}">
             @csrf
-            <input type="text" name="username" placeholder="Username"/>
-            <input type="password" name="password" placeholder="Password"/>
-            <input type="email" name="email" placeholder="Email Address"/>
-            <input type="text" name="address" placeholder="Address"/>
+            <input type="text" name="name" placeholder="Username" required/>
+            <input type="password" name="password" placeholder="Password" required/>
+            <input type="email" name="email" placeholder="Email Address" required/>
+            <input type="text" name="address" placeholder="Address" required/>
             <button>Register</button>
           </form>
         </div>
         <div class="cta"><a href="">Quên Mật Khẩu?</a></div>
       @if(Session::get('loi'))
-      <div class="alert alert-danger" role="alert">
+      <div class="alert alert-danger"role="alert">
         {{Session::get('loi')}}
       </div>
       @endif

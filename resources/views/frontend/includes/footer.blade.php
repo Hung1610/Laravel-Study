@@ -1,7 +1,7 @@
 <!-- Footer -->
    <hr>
    <footer>
-        <p style="text-align: center;">Copyright &copy; Your Website 2014</p>
+        <p style="text-align: center;">Copyright &copy; Red and Bin</p>
    </footer>
    <!-- end Footer -->
    <!-- jQuery -->
