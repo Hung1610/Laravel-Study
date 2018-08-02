@@ -54,7 +54,8 @@ class ContentController extends Controller
             'sub_category_id'       => 1,
         ]);
         // dd(route($this->model->route .'.index'), $request->all());
-        Content::create($request->all());
+        $this->model->create($request->all());
+        session()->flash('flash_message', 'Thêm dữ liệu thành công');
         return redirect()->route($this->model->route .'.index');
     }
 

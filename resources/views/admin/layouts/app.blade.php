@@ -87,6 +87,7 @@ to get the desired effect
 <script src="{{ asset('template/admin/plugins/chart.js/Chart.min.js') }}"></script>
 <script src="{{ asset('template/admin/dist/js/demo.js') }}"></script>
 <script src="{{ asset('template/admin/dist/js/pages/dashboard3.js') }}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 @stack('scripts')
 </body>
 </html>

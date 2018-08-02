@@ -2,6 +2,16 @@
 @section('title', 'CONTENT-CATEGORY')
 
 @section('content')
+ {{-- #SESSION --}}
+@if(Session::has('flash_message'))
+<div class="alert alert-success alert-dismissible">
+  	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  	<h5><i class="icon fa fa-check"></i> Thông báo!</h5>
+  	{{ session('flash_message') }}
+</div>
+@endif
+{{-- //SESSION --}}
+
 <a href="{{ route($model . '.create') }}">Them bai viet</a>
 {{ $data_table->links() }}
 <div class="card">
