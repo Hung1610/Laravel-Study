@@ -4,8 +4,51 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e875da0d335b8580c952e20b737b50d2",
+    "content-hash": "4cd2a934129814930e257719cd5633c4",
     "packages": [
+        {
+            "name": "biscolab/laravel-recaptcha",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/biscolab/laravel-recaptcha.git",
+                "reference": "e053cb967eb18ae9f1efb79938d2a61ad3e90bd9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/biscolab/laravel-recaptcha/zipball/e053cb967eb18ae9f1efb79938d2a61ad3e90bd9",
+                "reference": "e053cb967eb18ae9f1efb79938d2a61ad3e90bd9",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.*",
+                "php": ">=5.5.9|7.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Biscolab\\ReCaptcha\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roberto Belotti",
+                    "email": "boby.belotti@gmail.com"
+                }
+            ],
+            "time": "2017-05-07T09:47:43+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",

@@ -25,7 +25,8 @@ class registerRequest extends FormRequest
     {
         $rules = [
           'name'=>'unique:users', // :users is table name in sql
-          'email'=>'unique:users'
+          'email'=>'unique:users',
+          'g-recaptcha-response' => 'recaptcha'
         ];
 
         return $rules;
@@ -38,7 +39,8 @@ class registerRequest extends FormRequest
     {
       return [
           'name.unique'  => 'Tên đã được lấy!!',
-          'email.unique' => 'Email đã được lấy!!'
+          'email.unique' => 'Email đã được lấy!!',
+          'recaptcha' => 'Recaptcha sai!!!'
       ];
     }
 
