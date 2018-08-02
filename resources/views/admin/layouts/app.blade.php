@@ -56,11 +56,8 @@ to get the desired effect
 
     <!-- Main content -->
     <div class="content">
-      <div class="container-fluid">
-        @yield('title')
         @yield('content')
         <!-- /.row -->
-      </div>
       <!-- /.container-fluid -->
     </div>
     <!-- /.content -->
