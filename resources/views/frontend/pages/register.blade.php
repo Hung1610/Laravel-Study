@@ -7,6 +7,9 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="css/style.css">
+    <!--Recaptcha google libary -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
   </head>
   <body>
     <div class="container">
@@ -26,6 +29,8 @@
             <input type="password" name="password" placeholder="Password"/>
             <input type="email" name="email" placeholder="Email Address" required/>
             <input type="text" name="address" placeholder="Address" required/>
+          <!-- <div class="g-recaptcha" data-theme="light" data-sitekey="6Le47mcUAAAAAJVwzjoyLvr2jE_JYPUSrs7PM3Vl" style="transform:scale(0.8);-webkit-transform:scale(0.8);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>-->
+          {!! htmlFormSnippet() !!}
             <button id="button-register">Register</button>
           </form>
         </div>

@@ -43,10 +43,20 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(RegisterRequest $request)
+    public function store(Request $request)
     {
         //
-        $validate = $request->validated();
+        $this->validate($request,[
+          'name' =>'required|min:3|max:100|unique:users',
+          'email'=>'unique:users',
+        ],[
+          'name.required'=>'Bạn chưa nhập tên thể loại',
+          'name.unique'=>'Trùng Username',
+          'name.min'=>'độ dài tên phải lớn hơn 3',
+          'name.max'=>'độ dài tên phải bé hơn 100',
+          'email'=>'Trùng Email'
+        ]
+        );
         $user = new $this->model;
         $user->name= $request->name;
         $user->email= $request->email;
