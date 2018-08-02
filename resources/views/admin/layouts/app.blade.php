@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>AdminLTE 3 | Dashboard 3</title>
+  <title>@yield('title')</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('template/admin/plugins/font-awesome/css/font-awesome.min.css') }}">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="{{ asset('template/admin/dist/css/adminlte.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  @yield('title')
+  
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -57,7 +57,8 @@ to get the desired effect
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-          COntent stuff
+        @yield('title')
+        @yield('content')
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->
@@ -65,7 +66,6 @@ to get the desired effect
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  @yield('content')
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->

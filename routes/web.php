@@ -27,5 +27,10 @@ Route::post('dangky','xuLyAuthController@postRegister')->name('postregister');
 Route::get('admin', function(){
     return view('admin.layouts.app');
 });
+Route::prefix('admin')->group(function () {
+    Route::resource('comment', 'CommentController');
+    Route::resource('content', 'ContentController');
+    Route::resource('content-categories', 'ContentCategoryController');
+    Route::resource('sub-content-categories', 'SubContentCategoryController');
 
-Route::resource('comment', 'CommentController');
+});

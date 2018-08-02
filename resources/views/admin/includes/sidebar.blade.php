@@ -25,7 +25,7 @@
             <!-- Add icons to the links using the .nav-icon class
                   with font-awesome or any other icon font library -->
             <li class="nav-item has-treeview menu-collapsed">
-              <a href="#" class="nav-link active">
+              <a href="#" class="nav-link ">
                 <i class="nav-icon fa fa-dashboard"></i>
                 <p>
                   Tac vu nhanh
@@ -43,6 +43,41 @@
                   <a href="./index2.html" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>Quan li nguoi dung</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview menu-open">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fa fa-dashboard"></i>
+                <p>
+                  Quan li he thong
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./index.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Comment</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./index2.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Content</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./index2.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Content Category</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./index2.html" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Sub Content Category</p>
                   </a>
                 </li>
               </ul>

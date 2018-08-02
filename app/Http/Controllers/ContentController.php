@@ -18,7 +18,7 @@ class ContentController extends Controller
      */
     public function index()
     {
-        return 1;
+        return view(config('controller.prefix_view') . config('controller.folder') . $this->model->table . '.index');
     }
 
     /**

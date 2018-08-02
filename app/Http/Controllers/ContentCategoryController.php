@@ -19,7 +19,7 @@ class ContentCategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view(config('controller.prefix_view') . config('controller.folder') . $this->model->table . '.index');
     }
 
     /**
