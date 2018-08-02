@@ -9,5 +9,7 @@ class mainController extends Controller
     public function getTrangChu(){
       return view('frontend.index');
     }
-
+    public function getGioiThieu(){
+      return view('frontend.pages.gioithieu');
+    }
 }

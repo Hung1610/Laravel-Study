@@ -33,5 +33,5 @@ Route::prefix('admin')->group(function () {
     Route::resource('content-categories', 'ContentCategoryController');
     Route::resource('sub-content-categories', 'SubContentCategoryController');
     Route::resource('users', 'UserController');
-
 });
+Route::get('about','mainController@getGioiThieu')->name('gioithieu');
