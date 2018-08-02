@@ -25,15 +25,15 @@
         <td>{{ $data->email }}</td>
         <td>{{ $data->address}}
         <td>
-            <div onclick="window.location.href = '{{ url(config('controller.prefix_url') ) }}';" class="btn btn-primary btn-margin" title='Chi tiết'>
+            <a href="{{route('users.show',$data->id)}}"class="btn btn-success btn-margin" title="Sửa">
                 <i class="fa fa-pencil" aria-hidden="true"></i>
-            </div>
+            </a>
         </td>
         <td>
             <form class="" action="users/{{$data->id}}" method="post">
               @csrf
               {{ method_field('DELETE') }}
-              <button type="submit" class="btn btn-danger btn-margin">
+              <button type="submit" class="btn btn-danger btn-margin" title="Xóa">
                   <i class="fa fa-remove" aria-hidden="true"></i>
               </button>
             </form>

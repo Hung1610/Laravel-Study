@@ -64,6 +64,8 @@ class UserController extends Controller
     public function show($id)
     {
         //
+      $user = $this->model::find($id);
+      return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.edit',['user'=>$user]);
     }
 
     /**
@@ -84,9 +86,38 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        $user = $this->model::find($id);
+        if($user->name == $request->name){
+          if($user->email == $request->email){
+            $user->address=$request->address;
+            $user->save();
+          }
+          else{
+            $user->email=$request->email;
+            $user->address=$request->address;
+            $user->save();
+          }
+        }
+        else{
+          $this->validate($request,[
+            'name' =>'required|min:3|max:100|unique:users',
+            'email'=>'unique:users'
+          ],[
+            'name.required'=>'Bạn chưa nhập tên thể loại',
+            'name.unique'=>'Trùng Username',
+            'name.min'=>'độ dài tên phải lớn hơn 3',
+            'name.max'=>'độ dài tên phải bé hơn 100',
+            'email'=>'Trùng Email'
+          ]
+        );
+            $user->name=$request->name;
+            $user->email=$request->email;
+            $user->address=$request->address;
+            $user->save();
+        }
+        return redirect()->route('users.index')->with('thongbao','Cập Nhập Thành Công');
     }
 
     /**
