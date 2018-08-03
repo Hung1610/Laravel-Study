@@ -12,18 +12,18 @@
     <div class="card-body">
         {{-- ALIAS & TITLE --}}
       <div class="form-group">
-        <label for="title">Title</label>
+        <label for="title">Nhập Title</label>
         <input type="text" name="title" class="form-control" id="title" placeholder="enter title" value="{{ old('title') }}">
       </div>
       <div class="form-group">
-        <label for="title">Alias</label>
-        <input type="text" name="alias" class="form-control" id="alias" placeholder="enter title" value="{{ old('alias') }}">
+        <label for="title">Nhập Alias</label>
+        <input type="text" name="alias" class="form-control" id="alias" placeholder="enter alias" value="{{ old('alias') }}">
       </div>
         {{-- END ALIAS & TITLE --}}
 
       {{-- DATE MASK --}}
       <div class="form-group">
-        <label for="content_date">Ngay dang</label>
+        <label for="content_date">Nhập ngày đăng</label>
         <div class="input-group">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-calendar"></i></span>
@@ -36,7 +36,7 @@
       {{-- CK EDITOR --}}
       <div class="mb-3">
         <label for="content">Content</label>
-        <textarea id="content" name="content" style="width: 100%">This is my textarea to be replaced with CKEditor.</textarea>
+        <textarea id="content" name="content" style="width: 100%" placeholder=""></textarea>
       </div>
       {{-- /CK-EDITOR --}}
 
