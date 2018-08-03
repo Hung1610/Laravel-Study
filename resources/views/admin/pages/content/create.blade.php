@@ -55,7 +55,6 @@
     </div>
   </form>
 </div>
-{!! route('uploadPhoto').'?_token='.csrf_token() !!}
 @endsection
 
 @push('scripts')
