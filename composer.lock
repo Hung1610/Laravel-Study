@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4cd2a934129814930e257719cd5633c4",
+    "content-hash": "01e6de73935e51902feb553bea93b27e",
     "packages": [
         {
             "name": "biscolab/laravel-recaptcha",
-            "version": "v2.0.0",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/biscolab/laravel-recaptcha.git",
-                "reference": "e053cb967eb18ae9f1efb79938d2a61ad3e90bd9"
+                "reference": "abe093d79ba12589f7b086d89e452a9a2821fb5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/biscolab/laravel-recaptcha/zipball/e053cb967eb18ae9f1efb79938d2a61ad3e90bd9",
-                "reference": "e053cb967eb18ae9f1efb79938d2a61ad3e90bd9",
+                "url": "https://api.github.com/repos/biscolab/laravel-recaptcha/zipball/abe093d79ba12589f7b086d89e452a9a2821fb5a",
+                "reference": "abe093d79ba12589f7b086d89e452a9a2821fb5a",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                     "email": "boby.belotti@gmail.com"
                 }
             ],
-            "time": "2017-05-07T09:47:43+00:00"
+            "time": "2017-11-01T00:05:43+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
