@@ -22,28 +22,28 @@
         <div class="toggle"><i class="fa fa-times fa-pencil"></i>
         </div>
         <div class="form">
-          <h2>Create an account</h2>
+          <h2>Tạo tài khoản</h2>
           <form method="post" id="apply" action="{{route('postregister')}}">
             @csrf
-            <input type="text" name="name" placeholder="Username" required/>
+            <input type="text" name="name" placeholder="Tên đăng nhập" required/>
             <input type="password" name="password" placeholder="Password"/>
-            <input type="email" name="email" placeholder="Email Address" required/>
-            <input type="text" name="address" placeholder="Address" required/>
+            <input type="email" name="email" placeholder="Email" required/>
+            <input type="text" name="address" placeholder="Địa chỉ" required/>
           <!-- <div class="g-recaptcha" data-theme="light" data-sitekey="6Le47mcUAAAAAJVwzjoyLvr2jE_JYPUSrs7PM3Vl" style="transform:scale(0.8);-webkit-transform:scale(0.8);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>-->
           {!! htmlFormSnippet() !!}
-            <button id="button-register">Register</button>
+            <button id="button-register">Đăng kí</button>
           </form>
         </div>
         <div class="form">
-          <h2>Login to your account</h2>
+          <h2>Đăng Nhập</h2>
           <form method="post" action="{{route('postlogin')}}">
             @csrf
-            <input type="text" name="username" placeholder="Username" required/>
+            <input type="text" name="username" placeholder="Tên đăng nhập" required/>
             <input type="password" name="password" placeholder="Password" required/>
             <button>Login</button>
           </form>
         </div>
-        <div class="cta"><a href="">Forgot your password?</a></div>
+        <div class="cta"><a href="">Quên mật khẩu?</a></div>
         @foreach($errors->all() as $error)
           <div class="alert alert-danger" style="margin-bottom: 0%;" role="alert">
             {{$error}}

@@ -10,3 +10,7 @@
 ## About this project
 
 Hi , im creating pure laravel project about reading site . so much to learn now..
+
+things before you want to download my project
+- composer require doctrine/dbal
+- composer require biscolab/laravel-recaptcha:^2.0

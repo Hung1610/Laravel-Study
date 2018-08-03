@@ -7,6 +7,8 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="css/style.css">
+    <!--Recaptcha google libary -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
   </head>
   <body>
 
@@ -23,7 +25,7 @@
           <h2>Đăng Nhập</h2>
           <form method="post" action="{{route('postlogin')}}">
             @csrf
-            <input type="text" name="username" placeholder="Tên Người Dùng" required/>
+            <input type="text" name="username" placeholder="Tên đăng nhập" required/>
             <input type="password" name="password" placeholder="Mật Khẩu" required/>
             <button>Login</button>
           </form>
@@ -36,10 +38,11 @@
             <input type="password" name="password" placeholder="Password" required/>
             <input type="email" name="email" placeholder="Email Address" required/>
             <input type="text" name="address" placeholder="Address" required/>
+            {!! htmlFormSnippet() !!}
             <button>Register</button>
           </form>
         </div>
-        <div class="cta"><a href="">Quên Mật Khẩu?</a></div>
+        <div class="cta"><a href="">Quên mật khẩu?</a></div>
       @if(Session::get('loi'))
       <div class="alert alert-danger"role="alert">
         {{Session::get('loi')}}
