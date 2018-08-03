@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\SubContentCategory;
+use App\ContentCategory;
 class SubContentCategoryController extends Controller
 {
     /**
@@ -11,9 +12,16 @@ class SubContentCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct(SubContentCategory $model){
+      return $this->model = $model;
+    }
+
+
+
     public function index()
     {
-        //
+        return view(config('controller.prefix_view').config('controller.folder').$this->model->route.'.index',['data'=>$this->model::paginate(10),'model'=>$this->model->route]);
     }
 
     /**
@@ -23,8 +31,10 @@ class SubContentCategoryController extends Controller
      */
     public function create()
     {
-        //
+        $data_category = ContentCategory::all();
+        return view(config('controller.prefix_view').config('controller.folder').$this->model->route.'.create',['data'=>$this->model::paginate(10),'data_category'=>$data_category]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -34,7 +44,19 @@ class SubContentCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+          'name' => 'unique:sub_content_category',
+          'alias' => 'unique:sub_content_category'
+        ],[
+          'name.unique' => 'Trùng thể loại',
+          'alias.unique' => 'Trùng alias'
+        ]);
+        $data = new $this->model;
+        $data->name = $request->name;
+        $data->alias = $request->alias;
+        $data->category_id = $request->id_category;
+        $data->save();
+        return redirect()->route('sub-content-category.index')->with('thongbao','Thêm thành công!!');
     }
 
     /**
@@ -56,7 +78,9 @@ class SubContentCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = $this->model::find($id);
+        $data_category = ContentCategory::all();
+        return view(config('controller.prefix_view').config('controller.folder').$this->model->route.'.edit',['data'=>$data,'data_category'=>$data_category,'model'=>$this->model->route]);
     }
 
     /**
@@ -68,7 +92,46 @@ class SubContentCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $data = $this->model::find($id);
+      if($data->name == $request->name){
+        if($data->alias == $request->alias){
+          return redirect()->route('sub-content-category.index')->with('thongbao','Không có sự thay đổi!!');
+        }
+        else{
+          $this->validate($request,[
+            'alias'=>'unique:content_category'
+          ],[
+            'alias.unique'=>'Trùng alias'
+          ]);
+          $data->name = $request->name;
+          $data->alias = $request->alias;
+          $data->category_id = $request->id_category;
+          $data->save();
+          return redirect()->route('sub-content-category.index')->with('thongbao','Đã sửa thành công!!');
+        }
+      }
+      else{
+        if($data->alias==$request->alias){
+          $data->name = $request->name;
+          $data->alias = $request->alias;
+          $data->category_id = $request->id_category;
+          $data->save();
+          return redirect()->route('sub-content-category.index')->with('thongbao','Đã sửa thành công!!');
+        }
+        else{
+          $this->validate($request,[
+            'name'=>'unique:content_category'
+          ],[
+            'name.unique'=>'Trùng tên thể loại'
+          ]);
+          $data->name = $request->name;
+          $data->alias = $request->alias;
+          $data->category_id = $request->id_category;
+          $data->save();
+          return redirect()->route('sub-content-category.index')->with('thongbao','Đã sửa thành công!!');
+        }
+      }
+      return;
     }
 
     /**
@@ -79,6 +142,8 @@ class SubContentCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = $this->model::find($id);
+        $data->delete();
+        return redirect()->route('sub-content-category.index')->with('thongbao','Xóa thành công!!');
     }
 }
