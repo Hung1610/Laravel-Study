@@ -32,15 +32,29 @@
           @if(Session::get('user'))
            <ul class="nav navbar-nav pull-right">
           <li>
-            <a>
-              <span class ="glyphicon glyphicon-user"></span>
-              {{Session::get('user')->name}}
-            </a>
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">  <i class="fa fa-user fa-fw"></i>
+                    {{Session::get('user')->name}}
+                     <i class="fa fa-caret-down"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-user">
+                      <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                      </li>
+                      <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                      </li>
+                      <li class="divider"></li>
+                      <li><a href="{{route('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                      </li>
+                  </ul>
+              </li>
           </li>
 
+          @if(Session::get('user')->is_admin==1)
           <li>
-            <a class="amain" href="{{route('logout')}}">Đăng xuất</a>
+            <a class="amain" href="{{route('admin')}}"><i class="fa fa-unlock-alt"></i> Admin Page</a>
           </li>
+          @endif
+          
             </ul>
           @else
 			    <ul class="nav navbar-nav pull-right">
