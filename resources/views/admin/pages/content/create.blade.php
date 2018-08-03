@@ -70,6 +70,7 @@
     $('#content_date').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
     $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
     // END DATE-MASK
+    
     // CK-EDITOR
     CKEDITOR.replace( 'content', {
         filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
