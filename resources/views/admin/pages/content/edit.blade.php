@@ -101,14 +101,16 @@
         $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
         // Replace the <textarea id="editor1"> with a CKEditor
         // instance, using default configuration.
-        ClassicEditor
-        .create(document.querySelector('#content'))
-        .then(function (editor) {
-            // The editor instance
-        })
-        .catch(function (error) {
-            console.error(error)
-        })
+        // CK-EDITOR
+        CKEDITOR.replace( 'content', {
+            filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
+            filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
+            filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Flash') }}',
+            filebrowserUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
+            filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
+            filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
+        } );
+        // END CK-EDITOR
     })
   
 </script>
