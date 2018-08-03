@@ -10,10 +10,17 @@
   <form name="frm_content" action="{{ route($model . '.store') }}" method="POST">
     @csrf
     <div class="card-body">
+        {{-- ALIAS & TITLE --}}
       <div class="form-group">
         <label for="title">Title</label>
-        <input type="text" name="title" class="form-control" id="title" placeholder="enter title">
+        <input type="text" name="title" class="form-control" id="title" placeholder="enter title" value="{{ old('title') }}">
       </div>
+      <div class="form-group">
+        <label for="title">Alias</label>
+        <input type="text" name="alias" class="form-control" id="alias" placeholder="enter title" value="{{ old('alias') }}">
+      </div>
+        {{-- END ALIAS & TITLE --}}
+        
       {{-- DATE MASK --}}
       <div class="form-group">
         <label for="content_date">Ngay dang</label>
@@ -58,13 +65,42 @@
 <script src="{{ asset('template/admin/plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
 <script src="{{ asset('template/admin/plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
 <script>
+    // ALIAS
+    function str_to_alias(id, idResult) {
+        var title, slug;
+        title = $('#'+id).val();
+        slug = title.toLowerCase();
+        slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
+        slug = slug.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
+        slug = slug.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
+        slug = slug.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
+        slug = slug.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
+        slug = slug.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
+        slug = slug.replace(/đ/gi, 'd');
+        slug = slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, '');
+        slug = slug.replace(/ /gi, "-");
+        slug = slug.replace(/\-\-\-\-\-/gi, '-');
+        slug = slug.replace(/\-\-\-\-/gi, '-');
+        slug = slug.replace(/\-\-\-/gi, '-');
+        slug = slug.replace(/\-\-/gi, '-');
+        slug = '@' + slug + '@';
+        slug = slug.replace(/\@\-|\-\@|\@/gi, '');
+        $('#'+idResult).val(slug);
+    }
+
+    $("#title").keyup(function () {
+        str_to_alias("title", "alias");
+    });
+    // END-ALIAS
+
   $(function () {
-    //Datemask dd/mm/yyyy
+
+    // DATE-MASK
     $('#content_date').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
-    //Datemask2 mm/dd/yyyy
     $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
+    // END DATE-MASK
+    
+    // CK-EDITOR
     ClassicEditor
       .create(document.querySelector('#content'))
       .then(function (editor) {
@@ -73,6 +109,7 @@
       .catch(function (error) {
         console.error(error)
       })
+    // END CK-EDITOR
   })
   
 </script>
