@@ -80,13 +80,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="./index.html" class="nav-link">
+                  <a href="{{ url(config('controller.prefix_url') . 'content') }}" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>Danh Sách</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="./index2.html" class="nav-link">
+                  <a href="{{ url(config('controller.prefix_url') . 'content/create') }}" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>Thêm</p>
                   </a>
