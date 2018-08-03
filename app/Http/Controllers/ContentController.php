@@ -78,7 +78,10 @@ class ContentController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.edit',[
+            'data'   => $this->model->find($id),
+            'model'  => $this->model->route,
+        ]);
     }
 
     /**

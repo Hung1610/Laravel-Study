@@ -35,13 +35,17 @@
         <td>{{ $index+1 }}</td>
         <td>{{ $data->title }}</td>
         <td>{{ $data->views }}</td>
+
+        {{-- INSERT-BNT --}}
         <td>
-            <a href="">
+            <a href="{{ route($model . '.edit', $data->id) }}">
               <div class="btn btn-primary btn-margin" title='Cập nhật'>
                 <i class="fa fa-pencil" aria-hidden="true"></i>
               </div>
             </a>
         </td>
+        {{-- //INSERT-BNT --}}
+
         {{-- DELETE-BNT --}}
         <td>
           <form method="POST" action="{{ route($model . '.destroy', $data->id) }}">
