@@ -7,7 +7,7 @@ use App\ContentCategory;
 
 class ContentCategoryController extends Controller
 {
-    
+
     public function __construct(ContentCategory $model)
     {
         $this->model    = $model;
@@ -19,7 +19,7 @@ class ContentCategoryController extends Controller
      */
     public function index()
     {
-        return view(config('controller.prefix_view') . config('controller.folder') . $this->model->table . '.index');
+        return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.index',['data_category'=>$this->model::paginate(10),'model'=>$this->model->route]);
     }
 
     /**
@@ -29,7 +29,7 @@ class ContentCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view(config('controller.prefix_view').config('controller.folder').$this->model->route.'.create');
     }
 
     /**
@@ -40,10 +40,21 @@ class ContentCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+          'name'=>'unique:content_category',
+          'alias'=>'unique:content_category'
+        ],[
+          'name.unique'=>'Trùng tên',
+          'alias.unique'=>'Trùng thể loại'
+        ]);
+        $data = new $this->model;
+        $data->name = $request->name;
+        $data->alias = $request->alias;
+        $data->save();
+        return redirect()->route('content-category.index')->with('thongbao','Đã thêm thành công!!');
     }
 
-    /**
+      /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -62,7 +73,9 @@ class ContentCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = $this->model::find($id);
+        return view(config('controller.prefix_view').config('controller.folder').$this->model->route.'.edit',['data'=>$data,'model'=>$this->model->route]);
+
     }
 
     /**
@@ -74,7 +87,43 @@ class ContentCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $data = $this->model::find($id);
+      if($data->name == $request->name){
+        if($data->alias == $request->alias){
+          return redirect()->route('content-category.index')->with('thongbao','Không có sự thay đổi!!');
+        }
+        else{
+          $this->validate($request,[
+            'alias'=>'unique:content_category'
+          ],[
+            'alias.unique'=>'Trùng alias'
+          ]);
+          $data->name = $request->name;
+          $data->alias = $request->alias;
+          $data->save();
+          return redirect()->route('content-category.index')->with('thongbao','Đã sửa thành công!!');
+        }
+      }
+      else{
+        if($data->alias==$request->alias){
+          $data->name = $request->name;
+          $data->alias = $request->alias;
+          $data->save();
+          return redirect()->route('content-category.index')->with('thongbao','Đã sửa thành công!!');
+        }
+        else{
+          $this->validate($request,[
+            'name'=>'unique:content_category'
+          ],[
+            'name.unique'=>'Trùng thể loại'
+          ]);
+          $data->name = $request->name;
+          $data->alias = $request->alias;
+          $data->save();
+          return redirect()->route('content-category.index')->with('thongbao','Đã sửa thành công!!');
+        }
+      }
+      return;
     }
 
     /**
@@ -86,5 +135,8 @@ class ContentCategoryController extends Controller
     public function destroy($id)
     {
         //
+        $data = $this->model::find($id);
+        $data->delete();
+        return redirect()->route('content-category.index')->with('thongbao','Đã xóa thành công!!');
     }
 }
