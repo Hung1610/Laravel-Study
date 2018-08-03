@@ -46,7 +46,7 @@
         <label class="form-check-label" for="is_trend">tin noi bat</label>
       </div>
       {{-- /CHECK-BOX --}}
-
+      <button id="test"> test </button>
     </div>
     <!-- /.card-body -->
 
