@@ -55,7 +55,7 @@
     </div>
   </form>
 </div>
-
+{!! route('uploadPhoto').'?_token='.csrf_token() !!}
 @endsection
 
 @push('scripts')
@@ -64,6 +64,16 @@
 <script src="{{ asset('template/admin/plugins/input-mask/jquery.inputmask.js') }}"></script>
 <script src="{{ asset('template/admin/plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
 <script src="{{ asset('template/admin/plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
+<script>
+  CKEDITOR.replace( 'content', {
+        filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
+        filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
+        filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Flash') }}',
+        filebrowserUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
+        filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
+        filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
+    } );
+</script>
 <script>
     // ALIAS
     function str_to_alias(id, idResult) {
@@ -92,7 +102,6 @@
         str_to_alias("title", "alias");
     });
     // END-ALIAS
-
   $(function () {
 
     // DATE-MASK
@@ -101,14 +110,7 @@
     // END DATE-MASK
     
     // CK-EDITOR
-    ClassicEditor
-      .create(document.querySelector('#content'))
-      .then(function (editor) {
-        // The editor instance
-      })
-      .catch(function (error) {
-        console.error(error)
-      })
+    
     // END CK-EDITOR
   })
   

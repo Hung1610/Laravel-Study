@@ -24,6 +24,7 @@ Route::get('dangxuat','xuLyAuthController@logout')->name('logout');
 
 Route::get('dangky','xuLyAuthController@getRegister')->name('register');
 Route::post('dangky','xuLyAuthController@postRegister')->name('postregister');
+Route::post('uploadPhoto','UploadPhotoController@storageImage')->name('uploadPhoto');
 
 
 Route::prefix('admin')->group(function () {
