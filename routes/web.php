@@ -27,7 +27,15 @@ Route::post('dangky','xuLyAuthController@postRegister')->name('postregister');
 Route::post('uploadPhoto','UploadPhotoController@storageImage')->name('uploadPhoto');
 
 
-Route::prefix('admin')->group(function () {
+/*Route::prefix('admin',)->group(function () {
+    Route::resource('comment', 'CommentController');
+    Route::resource('content', 'ContentController');
+    Route::resource('content-category', 'ContentCategoryController');
+    Route::resource('sub-content-category', 'SubContentCategoryController');
+    Route::resource('user', 'UserController');
+});*/
+Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function () {
+    Route::get('/','mainController@getAdmin')->name('admin');
     Route::resource('comment', 'CommentController');
     Route::resource('content', 'ContentController');
     Route::resource('content-category', 'ContentCategoryController');
