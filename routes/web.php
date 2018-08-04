@@ -26,6 +26,10 @@ Route::get('dangky','xuLyAuthController@getRegister')->name('register');
 Route::post('dangky','xuLyAuthController@postRegister')->name('postregister');
 Route::post('uploadPhoto','UploadPhotoController@storageImage')->name('uploadPhoto');
 
+Route::get('concept', function(){
+    return view('frontend-concept.app-concept');
+});
+
 
 /*Route::prefix('admin',)->group(function () {
     Route::resource('comment', 'CommentController');

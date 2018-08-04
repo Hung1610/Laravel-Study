@@ -18,7 +18,7 @@
       </div>
       <div class="form-group">
         <label for="title">Nhập Alias</label>
-        <input type="text" name="alias" class="form-control" id="alias" placeholder="enter alias" value="{{ old('alias') }}">
+        <input type="text" name="alias" class="form-control" id="alias" placeholder="enter alias" value="{{ old('alias') }} ">
       </div>
       {{-- END ALIAS & TITLE --}}
 
