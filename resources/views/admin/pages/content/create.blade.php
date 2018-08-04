@@ -28,7 +28,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-calendar"></i></span>
           </div>
-          <input name="content_date" id="content_date" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask >
+          <input name="content_date" id="content_date" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask value="{{ old('content_date') }}">
         </div>
       </div>
       {{-- /DATE-MASK --}}
@@ -36,20 +36,21 @@
       {{-- THUMBNAIL --}}
       <div class="form-group">
         <label for="thumbnail">Thumbnail</label>
-        <input type="file" name="thumbnail" id="thumbnail" required="true">
+        <input type="file" name="thumbnail" id="thumbnail" value="{{ old('thumbnail') }}">
       </div>
       {{-- //THUMBNAIL --}}
       
       {{-- CK EDITOR --}}
       <div class="mb-3">
         <label for="content">Content</label>
-        <textarea id="content" name="content" style="width: 100%" placeholder=""></textarea>
+        <textarea id="content" name="content" style="width: 100%" placeholder="" value="{{ old('content') }}" ></textarea>
       </div>
       {{-- /CK-EDITOR --}}
 
       {{-- CHECK BOX --}}
       <div class="form-check">
-        <input type="checkbox" name="is_trend" class="form-check-input" id="is_trend" checked? value="1": value="0">
+        <input type="hidden" name="is_trend" value="0">
+        <input type="checkbox" name="is_trend" value="1" {{ old('is_trend') ? 'checked' : '' }}>
         <label class="form-check-label" for="is_trend">tin noi bat</label>
       </div>
       {{-- /CHECK-BOX --}}

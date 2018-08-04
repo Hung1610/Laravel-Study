@@ -50,10 +50,11 @@
 
       {{-- CHECK BOX --}}
       <div class="form-check">
-        <input type="checkbox" name="is_trend" class="form-check-input" id="is_trend" value="{{ $data->is_trend }}">
-        <label class="form-check-label" for="is_trend">tin noi bat</label>
-      </div>
-      {{-- /CHECK-BOX --}}
+          <input type="hidden" name="is_trend" value="0">
+          <input type="checkbox" name="is_trend" value="1" {{ old('is_trend') ? 'checked' : '' }}>
+          <label class="form-check-label" for="is_trend">tin noi bat</label>
+        </div>
+        {{-- /CHECK-BOX --}}
 
     </div>
     <!-- /.card-body -->

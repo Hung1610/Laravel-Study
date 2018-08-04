@@ -46,6 +46,7 @@ class ContentController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->all());
         // DATE
         $date = date('Y-m-d',strtotime($request->content_date));
         $request->merge([
