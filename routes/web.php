@@ -15,8 +15,8 @@
 //     return view('welcome');
 // });
 
-Route::get('','mainController@getTrangChu')->name('index');
-Route::get('baibao/{alias}/{id}','mainController@getPageDetail')->name('pagedetail');
+Route::get('','mainController@getTrangChu');
+Route::get('{alias}/{id}','mainController@getPageDetail')->name('pagedetail');
 
 Route::get('dangnhap','xuLyAuthController@getLogin')->name('login');
 Route::post('dangnhap','xuLyAuthController@postLogin')->name('postlogin');
