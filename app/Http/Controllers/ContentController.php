@@ -44,7 +44,7 @@ class ContentController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        // DATE
         $date = date('Y-m-d',strtotime($request->content_date));
         $request->merge([
             'img'           => '',
@@ -53,7 +53,16 @@ class ContentController extends Controller
             'content_date'  => $date,
             'sub_category_id'       => 1,
         ]);
-        // dd(route($this->model->route .'.index'), $request->all());
+        // END-DATE
+        
+        // IMG
+        //Kiểm tra file
+        if($request->hasFile('sp_hinh')){
+            $file = $request->sp_hinh;
+            $request->merge('img', $file->getClientOriginalName());
+            $file->move('/upload/' . $request->alias, $file);
+        }
+        // END-IMG
         $this->model->create($request->all());
         session()->flash('flash_message', 'Thêm dữ liệu thành công');
         return redirect()->route($this->model->route .'.index');
@@ -104,6 +113,7 @@ class ContentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->model->destroy($id);
+        return redirect()->back();
     }
 }

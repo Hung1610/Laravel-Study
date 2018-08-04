@@ -154,46 +154,8 @@
             </li>
           -->
             {{-- single-item --}}
-            <li class="nav-item">
-              <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fa fa-th"></i>
-                <p>
-                  Widgets
-                  {{-- Badge-new --}}
-                  <span class="right badge badge-danger">Gay</span>
-                </p>
-              </a>
-            </li>
             {{-- item has tree-view --}}
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-pie-chart"></i>
-                <p>
-                  Charts
-                  <i class="right fa fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="pages/charts/chartjs.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>ChartJS</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/charts/flot.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Flot</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/charts/inline.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Inline</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
+            <li class="nav-item has-treeviews
             <li class="nav-header">EXAMPLES</li>
             <li class="nav-item">
               <a href="pages/calendar.html" class="nav-link">
