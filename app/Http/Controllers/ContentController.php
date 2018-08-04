@@ -20,7 +20,6 @@ class ContentController extends Controller
      */
     public function index()
     {
-        dd('test');
         return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.index', [
             'data_table' =>   $this->model->paginate(10),
             'model'      =>   $this->model->route,

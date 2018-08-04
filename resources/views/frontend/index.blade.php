@@ -12,8 +12,8 @@
                   <a class="aindex" href="{{ url($key->alias.'/'.$key->id)}}"><img src="{{$key->img}}" alt="{{$key->title}}"></a>
 		             </div>
 							<div class="col-md-7">
-                <a href=""><p>{{$key->title}}</p></a>
-								{!!  substr(strip_tags($key->content), 0, 204) . "..." !!}
+                <a href="{{route('pagedetail',[$key->alias,$key->id])}}"><p>{{$key->title}}</p></a>
+								{!!  substr(strip_tags($key->content), 0, 204) !!}
 							</div>
 				       <div class="break"></div>
 		          </div>
