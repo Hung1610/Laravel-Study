@@ -42,6 +42,10 @@ a{
 	color:black;
 }
 
+.navbar{
+	min-height:56px;
+}
+
 a:hover{
 	text-decoration: none;
 }
