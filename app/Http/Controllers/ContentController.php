@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Content;
+use Auth;
 use App\SubContentCategory;
 
 class ContentController extends Controller
@@ -48,13 +49,20 @@ class ContentController extends Controller
      */
     public function store(Request $request)
     {
-        // DATE
-        $date = date('Y-m-d',strtotime($request->content_date));
-        $request->merge([
-            'user_id'       => 1,
-            'content_date'  => $date,
-        ]);
-        // END-DATE
+        // CURRENT-USER
+        if (Auth::check()) {
+            $user = Auth::user();
+        
+        // END CURRENT-USER
+
+            // DATE
+            $date = date('Y-m-d',strtotime($request->content_date));
+            $request->merge([
+                'user_id'       => $user->id,
+                'content_date'  => $date,
+            ]);
+            // END-DATE
+        }
 
         // IMG
         //Kiểm tra file

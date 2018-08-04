@@ -13,7 +13,7 @@
 		             </div>
 							<div class="col-md-7">
                 <a href=""><p>{{$key->title}}</p></a>
-								{!!  substr(strip_tags($key->content), 0, 204) !!}
+								{!!  substr(strip_tags($key->content), 0, 204) . "..." !!}
 							</div>
 				       <div class="break"></div>
 		          </div>
