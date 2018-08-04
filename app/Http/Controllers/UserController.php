@@ -23,7 +23,7 @@ class UserController extends Controller
         return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.index', [
             'data_table' =>   $this->model->paginate(10),
             'model'      =>   $this->model->route,
-            'index' => true
+            'indexuser' => true
         ]);
     }
 
@@ -36,7 +36,7 @@ class UserController extends Controller
     {
         return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.create',[
             'model'      =>   $this->model->route,
-            'add' => true
+            'adduser' => true
           ]);
     }
 
