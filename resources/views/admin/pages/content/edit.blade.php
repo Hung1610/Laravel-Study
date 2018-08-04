@@ -32,7 +32,14 @@
         </div>
       </div>
       {{-- /DATE-MASK --}}
-
+      
+      {{-- THUMBNAIL --}}
+      <div class="form-group">
+        <label for="thumbnail">Thumbnail</label>
+        <input type="file" name="thumbnail" id="thumbnail" required="true">
+      </div>
+      {{-- //THUMBNAIL --}}
+      
       {{-- CK EDITOR --}}
       <div class="mb-3">
         <label for="content">Content</label>

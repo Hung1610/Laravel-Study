@@ -35,7 +35,7 @@
       
       {{-- THUMBNAIL --}}
       <div class="form-group">
-        <label for="thumbnail">Hình</label>
+        <label for="thumbnail">Thumbnail</label>
         <input type="file" name="thumbnail" id="thumbnail" required="true">
       </div>
       {{-- //THUMBNAIL --}}
