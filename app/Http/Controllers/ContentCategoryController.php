@@ -19,7 +19,7 @@ class ContentCategoryController extends Controller
      */
     public function index()
     {
-        return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.index',['data_category'=>$this->model::paginate(10),'model'=>$this->model->route,'index'=>true]);
+        return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.index',['data_category'=>$this->model::paginate(10),'model'=>$this->model->route,'indexcontentcategory'=>true]);
     }
 
     /**
@@ -29,7 +29,7 @@ class ContentCategoryController extends Controller
      */
     public function create()
     {
-        return view(config('controller.prefix_view').config('controller.folder').$this->model->route.'.create',['model'=>$this->model->route],['add'=>true]);
+        return view(config('controller.prefix_view').config('controller.folder').$this->model->route.'.create',['model'=>$this->model->route],['addcontentcategory'=>true]);
     }
 
     /**

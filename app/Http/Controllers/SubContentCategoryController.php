@@ -21,7 +21,7 @@ class SubContentCategoryController extends Controller
 
     public function index()
     {
-        return view(config('controller.prefix_view').config('controller.folder').$this->model->route.'.index',['data'=>$this->model::paginate(10),'model'=>$this->model->route,'index' => true]);
+        return view(config('controller.prefix_view').config('controller.folder').$this->model->route.'.index',['data'=>$this->model::paginate(10),'model'=>$this->model->route,'indexsubcontent' => true]);
     }
 
     /**
@@ -32,7 +32,7 @@ class SubContentCategoryController extends Controller
     public function create()
     {
         $data_category = ContentCategory::all();
-        return view(config('controller.prefix_view').config('controller.folder').$this->model->route.'.create',['data'=>$this->model::paginate(10),'data_category'=>$data_category,'add' => true,'model' => $this->model->route]);
+        return view(config('controller.prefix_view').config('controller.folder').$this->model->route.'.create',['data'=>$this->model::paginate(10),'data_category'=>$data_category,'addsubcontent' => true,'model' => $this->model->route]);
     }
 
 
