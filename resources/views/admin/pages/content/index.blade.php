@@ -4,7 +4,7 @@
 @section('content')
  {{-- #SESSION --}}
 @if(Session::has('flash_message'))
-<div class="alert alert-success alert-dismissible">
+<div class="alert {{ Session::get('alert-class') }} alert-dismissible">
   	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
   	<h5><i class="icon fa fa-check"></i> Thông báo!</h5>
   	{{ session('flash_message') }}

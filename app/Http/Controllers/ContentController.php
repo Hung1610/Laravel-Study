@@ -66,6 +66,7 @@ class ContentController extends Controller
         // END-IMG
         $this->model->create($request->all());
         session()->flash('flash_message', 'Thêm dữ liệu thành công');
+        session()->flash('alert-class', 'alert-success');
         return redirect()->route($this->model->route .'.index');
     }
 
@@ -115,6 +116,8 @@ class ContentController extends Controller
     public function destroy($id)
     {
         $this->model->destroy($id);
+        session()->flash('flash_message', 'Xoa thanh cong');
+        session()->flash('alert-class', 'alert-danger');
         return redirect()->back();
     }
 }
