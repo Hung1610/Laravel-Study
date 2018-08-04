@@ -21,6 +21,7 @@ class ContentController extends Controller
         return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.index', [
             'data_table' =>   $this->model->paginate(10),
             'model'      =>   $this->model->route,
+            'index' => true
         ]);
     }
 
@@ -33,6 +34,7 @@ class ContentController extends Controller
     {
         return view('admin.pages.content.create',[
             'model'      =>   $this->model->route,
+            'add' => true
         ]);
     }
 
@@ -52,7 +54,7 @@ class ContentController extends Controller
             'sub_category_id'       => 1,
         ]);
         // END-DATE
-        
+
         // IMG
         //Kiểm tra file
         if($request->hasFile('thumbnail')){
