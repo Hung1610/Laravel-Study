@@ -15,8 +15,26 @@
 //     return view('welcome');
 // });
 
-Route::get('','mainController@getTrangChu');
-Route::get('{alias}/{id}','mainController@getPageDetail')->name('pagedetail');
+
+
+/*Route::prefix('admin',)->group(function () {
+    Route::resource('comment', 'CommentController');
+    Route::resource('content', 'ContentController');
+    Route::resource('content-category', 'ContentCategoryController');
+    Route::resource('sub-content-category', 'SubContentCategoryController');
+    Route::resource('user', 'UserController');
+});*/
+Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function () {
+    Route::get('','mainController@getAdmin')->name('admin');
+    Route::resource('comment', 'CommentController');
+    Route::resource('content', 'ContentController');
+    Route::resource('content-category', 'ContentCategoryController');
+    Route::resource('sub-content-category', 'SubContentCategoryController');
+    Route::resource('user', 'UserController');
+});
+
+Route::get('','mainController@getTrangChu')->name('home');
+Route::get('/{alias}/{id}','mainController@getPageDetail')->name('pagedetail');
 
 Route::get('dangnhap','xuLyAuthController@getLogin')->name('login');
 Route::post('dangnhap','xuLyAuthController@postLogin')->name('postlogin');
@@ -28,22 +46,5 @@ Route::post('uploadPhoto','UploadPhotoController@storageImage')->name('uploadPho
 
 Route::get('concept', function(){
     return view('frontend-concept.app-concept');
-});
-
-
-/*Route::prefix('admin',)->group(function () {
-    Route::resource('comment', 'CommentController');
-    Route::resource('content', 'ContentController');
-    Route::resource('content-category', 'ContentCategoryController');
-    Route::resource('sub-content-category', 'SubContentCategoryController');
-    Route::resource('user', 'UserController');
-});*/
-Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function () {
-    Route::get('/','mainController@getAdmin')->name('admin');
-    Route::resource('comment', 'CommentController');
-    Route::resource('content', 'ContentController');
-    Route::resource('content-category', 'ContentCategoryController');
-    Route::resource('sub-content-category', 'SubContentCategoryController');
-    Route::resource('user', 'UserController');
 });
 Route::get('about','mainController@getGioiThieu')->name('gioithieu');
