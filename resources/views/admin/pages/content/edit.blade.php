@@ -9,6 +9,7 @@
   <!-- form start -->
   <form name="frm_content" action="{{ route($model . '.update', $data->id) }}" method="POST">
     @csrf
+    {{ method_field('PUT') }}
     <div class="card-body">
         {{-- ALIAS & TITLE --}}
       <div class="form-group">

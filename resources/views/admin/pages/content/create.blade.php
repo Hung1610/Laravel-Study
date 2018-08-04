@@ -9,6 +9,7 @@
   <!-- form start -->
   <form name="frm_content" action="{{ route($model . '.store') }}" enctype="multipart/form-data" method="POST">
     @csrf
+    {{ method_field('POST') }}
     <div class="card-body">
         {{-- ALIAS & TITLE --}}
       <div class="form-group">
