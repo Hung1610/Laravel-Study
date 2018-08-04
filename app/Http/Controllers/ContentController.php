@@ -20,7 +20,11 @@ class ContentController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
+        dd(config('controller.prefix_view') . config('controller.folder') . $this->model->route);
+=======
         dd('test');
+>>>>>>> d7a3ede8006448bf82f7245d592370bc732d6813
         return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.index', [
             'data_table' =>   $this->model->paginate(10),
             'model'      =>   $this->model->route,
@@ -53,7 +57,7 @@ class ContentController extends Controller
         // CURRENT-USER
         if (Auth::check()) {
             $user = Auth::user();
-        
+
         // END CURRENT-USER
 
             // DATE
@@ -126,7 +130,7 @@ class ContentController extends Controller
             'sub_category_id'       => 1,
         ]);
         // END-DATE
-        
+
         // IMG
         //Kiểm tra file
         if($request->hasFile('thumbnail')){
