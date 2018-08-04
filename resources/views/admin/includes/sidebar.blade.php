@@ -71,7 +71,7 @@
               </ul>
             </li>
             <li class="nav-item has-treeview @if(isset($model)) @if($model == 'content') menu-open @endif @else menu-collapsed @endif">
-              <a href="#" class="nav-link ">
+              <a href="#" class="nav-link @if(isset($model)) @if($model == 'content') active @endif  @endif">
                 <i class="nav-icon fa fa-cube fa-fw"></i>
                 <p>
                 Content
