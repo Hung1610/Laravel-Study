@@ -25,10 +25,10 @@
           <h2>Tạo tài khoản</h2>
           <form method="post" id="apply" action="{{route('postregister')}}">
             @csrf
-            <input type="text" name="name" placeholder="Tên đăng nhập" required/>
-            <input type="password" name="password" placeholder="Password"/>
-            <input type="email" name="email" placeholder="Email" required/>
-            <input type="text" name="address" placeholder="Địa chỉ" required/>
+            <input type="text" name="name" placeholder="Username" required oninvalid="this.setCustomValidity('3 từ tối thiểu')" oninput="this.setCustomValidity('')" pattern=".{3,30}"/>
+            <input type="password" name="password" placeholder="Password" required oninvalid="this.setCustomValidity('Xin Nhập Password')" oninput="this.setCustomValidity('')"/>
+            <input type="email" name="email" placeholder="Email Address" required oninvalid="this.setCustomValidity('Xin Nhập đúng định dạng Email')" oninput="this.setCustomValidity('')"/>
+            <input type="text" name="address" placeholder="Address" required oninvalid="this.setCustomValidity('Nhập địa chỉ')" oninput="this.setCustomValidity('')"/>
           <!-- <div class="g-recaptcha" data-theme="light" data-sitekey="6Le47mcUAAAAAJVwzjoyLvr2jE_JYPUSrs7PM3Vl" style="transform:scale(0.8);-webkit-transform:scale(0.8);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>-->
           {!! htmlFormSnippet() !!}
             <button id="button-register">Đăng kí</button>

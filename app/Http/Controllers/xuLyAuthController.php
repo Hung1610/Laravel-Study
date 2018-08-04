@@ -18,7 +18,6 @@ class xuLyAuthController extends Controller
     $username = $request->username;
     $password = $request->password;
     if(Auth::attempt(['name'=>$username,'password'=>$password])){
-      Session::put('user',Auth::user());
       return redirect()->route('index');
     }
     else {

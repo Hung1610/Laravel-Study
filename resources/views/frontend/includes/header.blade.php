@@ -29,12 +29,12 @@
 			        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
 			    </form>
 
-          @if(Session::get('user'))
+          @if(Auth::check())
            <ul class="nav navbar-nav pull-right">
           <li>
               <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">  <i class="fa fa-user fa-fw"></i>
-                    {{Session::get('user')->name}}
+                    {{Auth::user()->name}}
                      <i class="fa fa-caret-down"></i>
                   </a>
                   <ul class="dropdown-menu dropdown-user">
@@ -49,12 +49,12 @@
               </li>
           </li>
 
-          @if(Session::get('user')->is_admin==1)
+          @if(Auth::user()->is_admin==1)
           <li>
             <a class="amain" href="{{route('admin')}}"><i class="fa fa-unlock-alt"></i> Admin Page</a>
           </li>
           @endif
-          
+
             </ul>
           @else
 			    <ul class="nav navbar-nav pull-right">
