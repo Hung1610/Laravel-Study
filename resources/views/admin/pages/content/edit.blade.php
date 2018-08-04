@@ -36,7 +36,7 @@
       {{-- THUMBNAIL --}}
       <div class="form-group">
         <label for="thumbnail">Thumbnail:  <img src="{{ asset($data->img) }}" alt="" width="100" height="100" class="img-thumbnail"> </label><br>
-        <input type="file" name="thumbnail" id="thumbnail" required="true">
+        <input type="file" name="thumbnail" id="thumbnail">
       </div>
       {{-- //THUMBNAIL --}}
       
