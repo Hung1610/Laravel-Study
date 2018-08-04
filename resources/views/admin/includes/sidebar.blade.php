@@ -15,7 +15,7 @@
             <img src="{{asset('image/admin/testadminavatar.png')}}" class="img-circle elevation-2" alt="">
           </div>
           <div class="info">
-            <a href=""  class="d-block"><strong>{{Session::get('user')->name}}</strong></a>
+            <a href=""  class="d-block"><strong>{{Auth::user()->name}}</strong></a>
           </div>
         </div>
 

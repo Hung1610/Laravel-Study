@@ -23,21 +23,21 @@
         </div>
         <div class="form">
           <h2>Đăng Nhập</h2>
-          <form method="post" action="{{route('postlogin')}}">
+          <form method="post" id="form_login" action="{{route('postlogin')}}">
             @csrf
-            <input type="text" name="username" placeholder="Tên đăng nhập" required/>
-            <input type="password" name="password" placeholder="Mật Khẩu" required/>
-            <button>Login</button>
+            <input type="text" id="user_name" name="username" placeholder="Tên đăng nhập" required oninvalid="this.setCustomValidity('3 từ tối thiểu')" oninput="this.setCustomValidity('')" pattern=".{3,30}"/>
+            <input type="password" id="pass_word" name="password" placeholder="Mật Khẩu" required oninvalid="this.setCustomValidity('Xin Nhập Password')" oninput="this.setCustomValidity('')"/>
+            <button type="submit" id="button_login">Login</button>
           </form>
         </div>
         <div class="form">
           <h2>Tạo Tài Khoản</h2>
           <form method="post" action="{{route('postregister')}}">
             @csrf
-            <input type="text" name="name" placeholder="Username" required/>
-            <input type="password" name="password" placeholder="Password" required/>
-            <input type="email" name="email" placeholder="Email Address" required/>
-            <input type="text" name="address" placeholder="Address" required/>
+            <input type="text" name="name" placeholder="Username" required oninvalid="this.setCustomValidity('3 từ tối thiểu')" oninput="this.setCustomValidity('')" pattern=".{3,30}"/>
+            <input type="password" name="password" placeholder="Password" required oninvalid="this.setCustomValidity('Xin Nhập Password')" oninput="this.setCustomValidity('')"/>
+            <input type="email" name="email" placeholder="Email Address" required oninvalid="this.setCustomValidity('Xin Nhập đúng định dạng Email')" oninput="this.setCustomValidity('')"/>
+            <input type="text" name="address" placeholder="Address" required oninvalid="this.setCustomValidity('Nhập địa chỉ')" oninput="this.setCustomValidity('')"/>
             {!! htmlFormSnippet() !!}
             <button>Register</button>
           </form>
@@ -54,9 +54,7 @@
       </div>
       @endif
       </div>
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-          <script  src="js/index.js"></script>
-
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script  src="js/index.js"></script>
   </body>
 </html>
