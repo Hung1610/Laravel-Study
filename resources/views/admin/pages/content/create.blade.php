@@ -7,7 +7,7 @@
   </div>
   <!-- /.card-header -->
   <!-- form start -->
-  <form name="frm_content" action="{{ route($model . '.store') }}" method="POST">
+  <form name="frm_content" action="{{ route($model . '.store') }}" enctype="multipart/form-data" method="POST">
     @csrf
     <div class="card-body">
         {{-- ALIAS & TITLE --}}
@@ -35,8 +35,8 @@
       
       {{-- THUMBNAIL --}}
       <div class="form-group">
-        <label for="exampleInputEmail1">Hình</label>
-        <input type="file" name="sp_hinh" id="sp_hinh" required="true">
+        <label for="thumbnail">Hình</label>
+        <input type="file" name="thumbnail" id="thumbnail" required="true">
       </div>
       {{-- //THUMBNAIL --}}
       
@@ -53,7 +53,6 @@
         <label class="form-check-label" for="is_trend">tin noi bat</label>
       </div>
       {{-- /CHECK-BOX --}}
-      <button id="test"> test </button>
     </div>
     <!-- /.card-body -->
 

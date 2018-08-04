@@ -47,8 +47,6 @@ class ContentController extends Controller
         // DATE
         $date = date('Y-m-d',strtotime($request->content_date));
         $request->merge([
-            'img'           => '',
-            'alias'         => '',
             'user_id'       => 1,
             'content_date'  => $date,
             'sub_category_id'       => 1,
@@ -57,10 +55,13 @@ class ContentController extends Controller
         
         // IMG
         //Kiểm tra file
-        if($request->hasFile('sp_hinh')){
-            $file = $request->sp_hinh;
-            $request->merge('img', $file->getClientOriginalName());
-            $file->move('/upload/' . $request->alias, $file);
+        if($request->hasFile('thumbnail')){
+            $file = $request->thumbnail;
+            $filename = $file->getClientOriginalName();
+            $request->merge([
+                'img' => 'thumbnail/' . $request->alias. '/' . $filename
+                ]);
+            $file->move('thumbnail/' . $request->alias, $filename);
         }
         // END-IMG
         $this->model->create($request->all());
