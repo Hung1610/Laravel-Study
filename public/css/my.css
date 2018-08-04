@@ -153,3 +153,8 @@ font-size: 20px;
 padding-left: 10px;
 background: #eae9e9;
 }
+
+::-moz-selection {
+    background: transparent;
+    text-shadow: #000 0 0 2px;
+}
