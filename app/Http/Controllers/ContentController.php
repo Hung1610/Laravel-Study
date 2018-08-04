@@ -46,7 +46,6 @@ class ContentController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
         // DATE
         $date = date('Y-m-d',strtotime($request->content_date));
         $request->merge([
@@ -107,7 +106,33 @@ class ContentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        // DATE
+        $date = date('Y-m-d',strtotime($request->content_date));
+        $request->merge([
+            'user_id'       => 1,
+            'content_date'  => $date,
+            'sub_category_id'       => 1,
+        ]);
+        // END-DATE
+        
+        // IMG
+        //Kiểm tra file
+        if($request->hasFile('thumbnail')){
+            $file = $request->thumbnail;
+            $filename = $file->getClientOriginalName();
+            $request->merge([
+                'img' => 'thumbnail/' . $request->alias. '/' . $filename
+                ]);
+            $file->move('thumbnail/' . $request->alias, $filename);
+        }
+        // END-IMG
+
+        // CREAT MODEL
+        $this->model->update($request->all());
+        session()->flash('flash_message', 'Thêm dữ liệu thành công');
+        session()->flash('alert-class', 'alert-success');
+        // END CREAT-MODEL
     }
 
     /**

@@ -24,6 +24,7 @@
       <tr>
         <th style="width: 10px">#</th>
         <th>title</th>
+        <th>Trend</th>
         <th>views</th>
         <th style="width: 40px"></th>
         <th style="width: 40px"></th>
@@ -34,6 +35,7 @@
       <tr>
         <td>{{ $index+1 }}</td>
         <td>{{ $data->title }}</td>
+        <td>{{ $data->is_trend }}</td>
         <td>{{ $data->views }}</td>
 
         {{-- INSERT-BNT --}}

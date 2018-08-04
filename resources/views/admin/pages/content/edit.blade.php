@@ -35,7 +35,7 @@
       
       {{-- THUMBNAIL --}}
       <div class="form-group">
-        <label for="thumbnail">Thumbnail</label>
+        <label for="thumbnail">Thumbnail:  <img src="{{ asset($data->img) }}" alt="" width="100" height="100" class="img-thumbnail"> </label><br>
         <input type="file" name="thumbnail" id="thumbnail" required="true">
       </div>
       {{-- //THUMBNAIL --}}
@@ -51,7 +51,7 @@
       {{-- CHECK BOX --}}
       <div class="form-check">
           <input type="hidden" name="is_trend" value="0">
-          <input type="checkbox" name="is_trend" value="1" {{ old('is_trend') ? 'checked' : '' }}>
+          <input type="checkbox" name="is_trend" value="1" {{ old('is_trend',$data->is_trend) == 1 ? 'checked' : '' }}>
           <label class="form-check-label" for="is_trend">tin noi bat</label>
         </div>
         {{-- /CHECK-BOX --}}
