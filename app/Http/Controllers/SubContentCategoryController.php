@@ -95,7 +95,14 @@ class SubContentCategoryController extends Controller
       $data = $this->model::find($id);
       if($data->name == $request->name){
         if($data->alias == $request->alias){
-          return redirect()->route('sub-content-category.index')->with('thongbao','Không có sự thay đổi!!');
+          if($data->category_id == $request->id_category){
+            return redirect()->route('sub-content-category.index')->with('thongbao','Không có sự thay đổi!!');
+          }
+          else{
+            $data->category_id = $request->id_category;
+            $data->save();
+            return redirect()->route('sub-content-category.index')->with('thongbao','Đã sửa thành công!!');
+          }
         }
         else{
           $this->validate($request,[

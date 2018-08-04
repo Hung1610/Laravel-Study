@@ -35,8 +35,8 @@
                     <label>Chọn category</label>
                     <select class="form-control" name="id_category">
                         @foreach($data_category as $key)
-                        @if($data->id==$key->id)
-                          <option selected value="{{$key->id}}">{{$key->name}}</option>
+                        @if($data->category_id==$key->id)
+                        <option selected value="{{$key->id}}">{{$key->name}}</option>
                         @else
                         <option value="{{$key->id}}">{{$key->name}}</option>
                         @endif

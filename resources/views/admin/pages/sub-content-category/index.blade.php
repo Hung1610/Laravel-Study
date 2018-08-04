@@ -25,7 +25,7 @@
         <td>{{ $data->alias }}</td>
         <td>{{ $data->category_id}}</td>
         <td>
-            <a href="{{route('sub-content-category.edit',$data->id)}}"class="btn btn-success btn-margin" title="Sửa"> 
+            <a href="{{route('sub-content-category.edit',$data->id)}}"class="btn btn-success btn-margin" title="Sửa">
                 <i class="fa fa-pencil" aria-hidden="true"></i>
             </a>
         </td>
