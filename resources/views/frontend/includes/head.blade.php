@@ -8,11 +8,11 @@
     <title>test</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
-    <link href="css/my.css" rel="stylesheet">
+    <link href="{{asset('css/shop-homepage.css')}}" rel="stylesheet">
+    <link href="{{asset('css/my.css')}}" rel="stylesheet">
 
     <!--font-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">

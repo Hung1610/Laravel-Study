@@ -9,10 +9,10 @@
               @foreach($data_content as $key)
 					    <div class="row-item row">
 		             <div class="col-md-5">
-                  <a class="aindex" href=""><img src="{{$key->img}}" alt="{{$key->title}}"></a>
+                  <a class="aindex" href="{{route('pagedetail',[$key->alias,$key->id])}}"><img src="{{$key->img}}" alt="{{$key->title}}"></a>
 		             </div>
 							<div class="col-md-7">
-                <a href=""><p>{{$key->title}}</p></a>
+                <a href="{{route('pagedetail',[$key->alias,$key->id])}}"><p>{{$key->title}}</p></a>
 								{!!  substr(strip_tags($key->content), 0, 204) !!}
 							</div>
 				       <div class="break"></div>
