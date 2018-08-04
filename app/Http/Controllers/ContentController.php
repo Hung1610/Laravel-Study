@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Content;
+use App\SubContentCategory;
 
 class ContentController extends Controller
 {
@@ -33,7 +34,8 @@ class ContentController extends Controller
     public function create()
     {
         return view('admin.pages.content.create',[
-            'model'      =>   $this->model->route,
+            'sub'        => SubContentCategory::all(),
+            'model'      => $this->model->route,
             'addcontent' => true
         ]);
     }
@@ -51,7 +53,6 @@ class ContentController extends Controller
         $request->merge([
             'user_id'       => 1,
             'content_date'  => $date,
-            'sub_category_id'       => 1,
         ]);
         // END-DATE
 
@@ -92,6 +93,7 @@ class ContentController extends Controller
     public function edit($id)
     {
         return view(config('controller.prefix_view') . config('controller.folder') . $this->model->route . '.edit',[
+            'sub'        => SubContentCategory::all(),
             'data'   => $this->model->find($id),
             'model'  => $this->model->route,
         ]);
@@ -130,7 +132,7 @@ class ContentController extends Controller
 
         // CREAT MODEL
         $this->model->update($request->all());
-        session()->flash('flash_message', 'Thêm dữ liệu thành công');
+        session()->flash('flash_message', 'Cap nhat dữ liệu thành công');
         session()->flash('alert-class', 'alert-success');
         // END CREAT-MODEL
     }

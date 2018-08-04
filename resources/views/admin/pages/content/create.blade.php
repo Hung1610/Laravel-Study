@@ -11,7 +11,7 @@
     @csrf
     {{ method_field('POST') }}
     <div class="card-body">
-        {{-- ALIAS & TITLE --}}
+      {{-- ALIAS & TITLE --}}
       <div class="form-group">
         <label for="title">Nhập Title</label>
         <input type="text" name="title" class="form-control" id="title" placeholder="enter title" value="{{ old('title') }}">
@@ -20,7 +20,19 @@
         <label for="title">Nhập Alias</label>
         <input type="text" name="alias" class="form-control" id="alias" placeholder="enter alias" value="{{ old('alias') }}">
       </div>
-        {{-- END ALIAS & TITLE --}}
+      {{-- END ALIAS & TITLE --}}
+
+      {{-- SUB --}}
+      <div class="form-group">
+        <label>Sub title</label>
+        <select id="sub_category_id" name="sub_category_id" class="form-control">
+            <option value="" disabled selected>Select your option</option>
+          @foreach($sub as $data_sub)
+            <option value="{{ $data_sub->id }}">{{ $data_sub->name }}</option>
+          @endforeach
+        </select>
+      </div>
+      {{-- END-SUB --}}
 
       {{-- DATE MASK --}}
       <div class="form-group">
@@ -90,5 +102,8 @@
     } );
     // END CK-EDITOR
   })
+  
+  // SUB-CATEGORY
+  // END SUB-CATEGORY
 </script>
 @endpush

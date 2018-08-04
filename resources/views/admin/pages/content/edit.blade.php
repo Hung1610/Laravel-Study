@@ -11,7 +11,8 @@
     @csrf
     {{ method_field('PUT') }}
     <div class="card-body">
-        {{-- ALIAS & TITLE --}}
+
+      {{-- ALIAS & TITLE --}}
       <div class="form-group">
         <label for="title">Title</label>
         <input type="text" name="title" class="form-control" id="title" placeholder="enter title" value="{{ $data->title }}">
@@ -20,7 +21,18 @@
         <label for="title">Alias</label>
         <input type="text" name="alias" class="form-control" id="alias" placeholder="enter title" value="{{ $data->alias }}">
       </div>
-        {{-- END ALIAS & TITLE --}}
+      {{-- END ALIAS & TITLE --}}
+      
+      {{-- SUB --}}
+      <div class="form-group">
+        <label for="sub_category_id">Sub title</label>
+        <select name="sub_category_id" id="sub_category_id" class="form-control">
+          @foreach($sub as $data_sub)
+            <option value="{{ $data_sub->id }}">{{ $data_sub->name }}</option>
+          @endforeach
+        </select>
+      </div>
+      {{-- END-SUB --}}
 
       {{-- DATE MASK --}}
       <div class="form-group">
@@ -75,52 +87,58 @@
 <script src="{{ asset('template/admin/plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
 <script src="{{ asset('template/admin/plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
 <script>
-    // ALIAS
-    function str_to_alias(id, idResult) {
-        var title, slug;
-        title = $('#'+id).val();
-        slug = title.toLowerCase();
-        slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
-        slug = slug.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
-        slug = slug.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
-        slug = slug.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
-        slug = slug.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
-        slug = slug.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
-        slug = slug.replace(/đ/gi, 'd');
-        slug = slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, '');
-        slug = slug.replace(/ /gi, "-");
-        slug = slug.replace(/\-\-\-\-\-/gi, '-');
-        slug = slug.replace(/\-\-\-\-/gi, '-');
-        slug = slug.replace(/\-\-\-/gi, '-');
-        slug = slug.replace(/\-\-/gi, '-');
-        slug = '@' + slug + '@';
-        slug = slug.replace(/\@\-|\-\@|\@/gi, '');
-        $('#'+idResult).val(slug);
-    }
+  // ALIAS
+  function str_to_alias(id, idResult) {
+      var title, slug;
+      title = $('#'+id).val();
+      slug = title.toLowerCase();
+      slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
+      slug = slug.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
+      slug = slug.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
+      slug = slug.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
+      slug = slug.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
+      slug = slug.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
+      slug = slug.replace(/đ/gi, 'd');
+      slug = slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, '');
+      slug = slug.replace(/ /gi, "-");
+      slug = slug.replace(/\-\-\-\-\-/gi, '-');
+      slug = slug.replace(/\-\-\-\-/gi, '-');
+      slug = slug.replace(/\-\-\-/gi, '-');
+      slug = slug.replace(/\-\-/gi, '-');
+      slug = '@' + slug + '@';
+      slug = slug.replace(/\@\-|\-\@|\@/gi, '');
+      $('#'+idResult).val(slug);
+  }
 
-    $("#title").keyup(function () {
-        str_to_alias("title", "alias");
-    });
-    // END-ALIAS
+  $("#title").keyup(function () {
+      str_to_alias("title", "alias");
+  });
+  // END-ALIAS
 
-    $(function () {
-        //Datemask dd/mm/yyyy
-        $('#content_date').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
-        //Datemask2 mm/dd/yyyy
-        $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
-        // CK-EDITOR
-        CKEDITOR.replace( 'content', {
-            filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
-            filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
-            filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Flash') }}',
-            filebrowserUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
-            filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
-            filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
-        } );
-        // END CK-EDITOR
-    })
-  
+  $(function () {
+      //Datemask dd/mm/yyyy
+      $('#content_date').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+      //Datemask2 mm/dd/yyyy
+      $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+      // Replace the <textarea id="editor1"> with a CKEditor
+      // instance, using default configuration.
+      // CK-EDITOR
+      CKEDITOR.replace( 'content', {
+          filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
+          filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
+          filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Flash') }}',
+          filebrowserUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
+          filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
+          filebrowserFlashUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
+      } );
+      // END CK-EDITOR
+  })
+
+  // SUB-CATEGORY
+  $(document).ready(function(){
+      $('#sub_category_id').val('{{ old('sub_category_id', $data->sub_category_id) }}');
+  });
+  // END SUB-CATEGORY
+
 </script>
 @endpush
