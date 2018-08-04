@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-light-success elevation-4">
       <!-- Brand Logo -->
-      <a href="index3.html" class="brand-link">
+      <a href="{{route('admin')}}" class="brand-link">
         <img src="{{asset('image/admin/adminicon.png')}}" alt="img put here" class="brand-image img-circle elevation-3"
               style="opacity: .8">
         <span class="brand-text font-weight-light">Admin Page</span>
@@ -24,7 +24,7 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                   with font-awesome or any other icon font library -->
-            <li class="nav-item has-treeview menu-collapsed">
+            <li class="nav-item has-treeview  @if(isset($model)) @if($model == 'content-category') menu-open @endif @else menu-collapsed @endif">
               <a href="#" class="nav-link ">
                 <i class="nav-icon fa fa-bar-chart-o fa-fw"></i>
                 <p>
@@ -34,20 +34,20 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{route('content-category.index')}}" class="nav-link">
+                  <a href="{{route('content-category.index')}}" class="nav-link @if(isset($index)) active @endif">
                     <i class="fa fa-arrow-circle-right"></i>
                     <p>Danh Sách</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{route('content-category.create')}}" class="nav-link">
+                  <a href="{{route('content-category.create')}}" class="nav-link @if(isset($add)) active @endif">
                     <i class="fa fa-arrow-circle-right"></i>
                     <p>Thêm</p>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item has-treeview menu-collapsed">
+            <li class="nav-item has-treeview @if(isset($model)) @if($model == 'sub-content-category') menu-open @endif @else menu-collapsed @endif">
               <a href="#" class="nav-link ">
                 <i class="nav-icon fa fa-bar-chart-o fa-fw"></i>
                 <p>
@@ -57,20 +57,20 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{route('sub-content-category.index')}}" class="nav-link">
+                  <a href="{{route('sub-content-category.index')}}" class="nav-link @if(isset($index)) active @endif">
                     <i class="fa fa-arrow-circle-right"></i>
                     <p>Danh Sách</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{route('sub-content-category.create')}}" class="nav-link">
+                  <a href="{{route('sub-content-category.create')}}" class="nav-link @if(isset($add)) active @endif">
                     <i class="fa fa-arrow-circle-right"></i>
                     <p>Thêm</p>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item has-treeview menu-collapsed">
+            <li class="nav-item has-treeview @if(isset($model)) @if($model == 'content') menu-open @endif @else menu-collapsed @endif">
               <a href="#" class="nav-link ">
                 <i class="nav-icon fa fa-cube fa-fw"></i>
                 <p>
@@ -80,20 +80,20 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{ url(config('controller.prefix_url') . 'content') }}" class="nav-link">
+                  <a href="{{ url(config('controller.prefix_url') . 'content') }}" class="nav-link @if(isset($index)) active @endif">
                     <i class="fa fa-arrow-circle-right"></i>
                     <p>Danh Sách</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url(config('controller.prefix_url') . 'content/create') }}" class="nav-link">
+                  <a href="{{ url(config('controller.prefix_url') . 'content/create') }}" class="nav-link @if(isset($add)) active @endif">
                     <i class="fa fa-arrow-circle-right"></i>
                     <p>Thêm</p>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item has-treeview menu-collapsed">
+            <li class="nav-item has-treeview @if(isset($model)) @if($model == 'user') menu-open @endif @else menu-collapsed @endif">
               <a href="#" class="nav-link ">
                 <i class="nav-icon fa fa-users fa-fw"></i>
                 <p>
@@ -103,13 +103,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{route('user.index')}}" class="nav-link">
+                  <a href="{{route('user.index')}}" class="nav-link @if(isset($index)) active @endif">
                     <i class="fa fa-arrow-circle-right"></i>
                     <p>Danh Sách</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{route('user.create')}}" class="nav-link">
+                  <a href="{{route('user.create')}}" class="nav-link @if(isset($add)) active @endif">
                     <i class="fa fa-arrow-circle-right"></i>
                     <p>Thêm</p>
                   </a>
