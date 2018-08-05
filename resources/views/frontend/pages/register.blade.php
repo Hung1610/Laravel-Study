@@ -10,32 +10,6 @@
     <!--Recaptcha google libary -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-    $(document).ready(function(){
-      $("#username").focusout(function() {
-            $.ajax({
-                type: 'POST',
-                url: '{{url('checkname')}}', //geturl
-                data: {
-                  _token: "{{ csrf_token() }}", //sendtoken
-                  'name': $('#username').val(),
-                },
-                success: function(data) {
-                  if(data.check==0){
-                    $('.pbao').removeClass('d-none').text('Tên đã có người sử dụng!!');
-                    $('.fa-check').addClass('d-none');
-                  }
-                  if(data.check==1) {
-                    $('.pbao').addClass('d-none');
-                    $('.fa-check').removeClass('d-none');
-                  }
-                },
-            }).fail(function(){
-              alert('fail');
-            });
-        });
-    });
-    </script>
   </head>
   <body>
     <div class="container">
@@ -79,4 +53,31 @@
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
           <script  src="js/index.js"></script>
   </body>
+  
+  <script>
+    $(document).ready(function(){
+      $("#username").focusout(function() {
+            $.ajax({
+                type: 'POST',
+                url: '{{url('checkname')}}', //geturl
+                data: {
+                  _token: "{{ csrf_token() }}", //sendtoken
+                  'name': $('#username').val(),
+                },
+                success: function(data) {
+                  if(data.check==0){
+                    $('.pbao').removeClass('d-none').text('Tên đã có người sử dụng!!');
+                    $('.fa-check').addClass('d-none');
+                  }
+                  if(data.check==1) {
+                    $('.pbao').addClass('d-none');
+                    $('.fa-check').removeClass('d-none');
+                  }
+                },
+            }).fail(function(){
+              alert('fail');
+            });
+        });
+    });
+    </script>
 </html>

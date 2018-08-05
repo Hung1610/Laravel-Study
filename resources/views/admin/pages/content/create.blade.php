@@ -49,6 +49,7 @@
       {{-- THUMBNAIL --}}
       <div class="form-group">
         <label for="thumbnail">Thumbnail</label>
+        <img src="" id="preview" width="200px" /><br>
         <input type="file" name="thumbnail" id="thumbnail" value="{{ old('thumbnail') }}">
       </div>
       {{-- //THUMBNAIL --}}
@@ -85,7 +86,23 @@
 <script src="{{ asset('template/admin/plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
 <script src="{{ asset('js/alias.js') }}"></script>
 <script>
-  $(function () {
+  $(document).ready(function(){
+    // Load image Thumbnail
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#preview').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#thumbnail").change(function(){
+        readURL(this);
+    });
+    // END-Load image Thumbnail
+
     // DATE-MASK
     $('#content_date').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
     $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
@@ -102,7 +119,7 @@
     } );
     
     // END CK-EDITOR
-  })
+  });
   
   // SUB-CATEGORY
   // END SUB-CATEGORY
