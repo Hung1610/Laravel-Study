@@ -7,11 +7,11 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="css/style.css">
+    <script src="{{asset('js/jquery.min.js')}}"></script>
     <!--Recaptcha google libary -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
   </head>
   <body>
-
     <div class="container">
       <!-- Form Mixin-->
       <!-- Input Mixin-->
@@ -22,14 +22,15 @@
         <div class="toggle"><i class="fa fa-times fa-pencil"></i>
         </div>
         <div class="form">
+        <form action="{{route('postlogin')}}" method="post">
+          @csrf
           <h2>Đăng Nhập</h2>
-          <form method="post" id="form_login" action="{{route('postlogin')}}">
-            @csrf
-            <input type="text" id="user_name" name="username" placeholder="Tên đăng nhập" required oninvalid="this.setCustomValidity('3 từ tối thiểu')" oninput="this.setCustomValidity('')" pattern=".{3,30}"/>
-            <input type="password" id="pass_word" name="password" placeholder="Mật Khẩu" required oninvalid="this.setCustomValidity('Xin Nhập Password')" oninput="this.setCustomValidity('')"/>
-            <button type="submit" id="button_login">Login</button>
-          </form>
+            <input type="text" id="username" name="username" placeholder="Tên đăng nhập" required oninvalid="this.setCustomValidity('3 từ tối thiểu')" oninput="this.setCustomValidity('')" pattern=".{3,30}"/>
+            <input type="password" id="password" name="password" placeholder="Mật Khẩu" required oninvalid="this.setCustomValidity('Xin Nhập Password')" oninput="this.setCustomValidity('')"/>
+            <button type="submit" id="buttonlogin">Login</button>
+        </form>
         </div>
+
         <div class="form">
           <h2>Tạo Tài Khoản</h2>
           <form method="post" action="{{route('postregister')}}">

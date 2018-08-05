@@ -39,6 +39,7 @@ Route::get('/{alias}/{id}','mainController@getPageDetail')->name('pagedetail');
 Route::get('dangnhap','xuLyAuthController@getLogin')->name('login');
 Route::post('dangnhap','xuLyAuthController@postLogin')->name('postlogin');
 Route::get('dangxuat','xuLyAuthController@logout')->name('logout');
+Route::post('checkname','xuLyAuthController@checkName');
 
 Route::get('dangky','xuLyAuthController@getRegister')->name('register');
 Route::post('dangky','xuLyAuthController@postRegister')->name('postregister');
@@ -48,3 +49,7 @@ Route::get('concept', function(){
     return view('frontend-concept.app-concept');
 });
 Route::get('about','mainController@getGioiThieu')->name('gioithieu');
+
+Route::any('{any}', function () {
+    return redirect()->url('/');
+});

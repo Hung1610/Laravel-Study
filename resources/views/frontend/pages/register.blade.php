@@ -9,7 +9,33 @@
     <link rel="stylesheet" href="css/style.css">
     <!--Recaptcha google libary -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("#username").focusout(function() {
+            $.ajax({
+                type: 'POST',
+                url: '{{url('checkname')}}', //geturl
+                data: {
+                  _token: "{{ csrf_token() }}", //sendtoken
+                  'name': $('#username').val(),
+                },
+                success: function(data) {
+                  if(data.check==0){
+                    $('.pbao').removeClass('d-none').text('Tên đã có người sử dụng!!');
+                    $('.fa-check').addClass('d-none');
+                  }
+                  if(data.check==1) {
+                    $('.pbao').addClass('d-none');
+                    $('.fa-check').removeClass('d-none');
+                  }
+                },
+            }).fail(function(){
+              alert('fail');
+            });
+        });
+    });
+    </script>
   </head>
   <body>
     <div class="container">
@@ -25,7 +51,7 @@
           <h2>Tạo tài khoản</h2>
           <form method="post" id="apply" action="{{route('postregister')}}">
             @csrf
-            <input type="text" name="name" placeholder="Username" required oninvalid="this.setCustomValidity('3 từ tối thiểu')" oninput="this.setCustomValidity('')" pattern=".{3,30}"/>
+            <input type="text" name="name" id="username" placeholder="Username" required oninvalid="this.setCustomValidity('3 từ tối thiểu')" oninput="this.setCustomValidity('')" pattern=".{3,30}" /><p class="d-none pbao" style="color:red;margin-bottom:8%;"></p><i class="fa fa-check d-none" style="margin-left: 12.8%;margin-top: -2.5%;position: fixed;"></i>
             <input type="password" name="password" placeholder="Password" required oninvalid="this.setCustomValidity('Xin Nhập Password')" oninput="this.setCustomValidity('')"/>
             <input type="email" name="email" placeholder="Email Address" required oninvalid="this.setCustomValidity('Xin Nhập đúng định dạng Email')" oninput="this.setCustomValidity('')"/>
             <input type="text" name="address" placeholder="Address" required oninvalid="this.setCustomValidity('Nhập địa chỉ')" oninput="this.setCustomValidity('')"/>

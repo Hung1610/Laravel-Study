@@ -7,7 +7,7 @@ use App\Http\Requests\registerRequest;
 use Auth;
 use Session;
 use App\User;
-
+use Response;
 class xuLyAuthController extends Controller
 {
   public function getLogin(){
@@ -25,6 +25,14 @@ class xuLyAuthController extends Controller
     }
   }
 
+  //check name username
+  public function checkName(Request $request){
+      if(User::where('name',$request->name)->count()>0)
+        return Response::json(array('check'=>'0'));
+      else {
+          return Response::json(array('check' => '1'));
+      }
+  }
 
   public function getRegister(){
     return view('frontend.pages.register');

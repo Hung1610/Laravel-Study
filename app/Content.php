@@ -20,14 +20,14 @@ class Content extends Model
         'alias',
         'views',
         'user_id',
-        'sub_category_id',
+        'sub_content_category_id',
     ];
-    
+
     //REALTIONSHIP
     public function sub_content_category(){
         return $this->belongsTo('App\SubContentCategory');
     }
-    
+
     public function comments(){
         return $this->hasMany('App\Comment');
     }
