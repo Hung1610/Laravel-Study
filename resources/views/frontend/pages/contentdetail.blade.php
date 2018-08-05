@@ -22,19 +22,48 @@
         <h1 style="font-weight: bold;">
           {{$data_content->title}}
         </h1>
-        <div>
-          <p>Ngày Đăng : {{$data_content->content_date}} </p>
-          <p> Author: ... </p>
+        <div class="like-top">
+          <p>Author : ..... | Ngày Đăng : {{$data_content->content_date}}  </p>
         </div>
         <hr>
+        <div class="row">
+        <div class="col-md-3">
+        <ul class="list-group" style="margin-top:12%;">
+          <li class="list-group-item list-group-item-success lefttin">
+            <p>Tên Bài viết</p>
+            <p>ảnh đặt here</p>
+          </li>
+          <li class="list-group-item list-group-item-success lefttin">
+            <p>Tên Bài viết</p>
+            <p>ảnh đặt here</p>
+          </li>
+          <li class="list-group-item list-group-item-success lefttin">
+            <p>Tên Bài viết</p>
+            <p>ảnh đặt here</p>
+          </li>
+        </ul>
+        </div>
+        <div class="col-md-9">
         <div style="font-family: 'Tinos', serif;font-size:120%;">
           {!!$data_content->content!!}
           <p>Nguồn : .... </p>
         </div>
+        </div>
+        </div>
         <hr>
         <p>ads place here </p>
-        <hr>
-        <div style="margin-top:10px;"><h4>Bài Đăng Nổi Bậc ( chưa add) </h4></div>
+        <p class="baidangtittle">Bài Đăng Nổi Bậc </p>
+        <div class="row">
+          <div class="col-md-4">
+            put it here
+          </div>
+          <div class="col-md-4">
+            put it here
+          </div>
+          <div class="col-md-4">
+            put it here
+          </div>
+        </div>
         <hr>
         <div class="formcomment">
           <p class="binhluantittle">Bình Luận </p>
