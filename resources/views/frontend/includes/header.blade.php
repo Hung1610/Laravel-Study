@@ -1,76 +1,66 @@
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top navchinh" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" style="color:white;" href="#">Trang Tin Tức</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="{{route('gioithieu')}}" class="amain">Giới thiệu</a>
-                    </li>
-                    <li>
-                        <a href="#" class="amain">Liên hệ</a>
-                    </li>
-                </ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">
+    <img src="bird.jpg" alt="test" style="width:40px;">
+  </a>
 
-                <form class="navbar-form navbar-left" role="search">
-			        <div class="form-group">
-			          <input type="text" class="form-control" placeholder="Search">
-			        </div>
-			        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-			    </form>
-
-          @if(Auth::check())
-           <ul class="nav navbar-nav pull-right">
-          <li>
-              <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">  <i class="fa fa-user fa-fw"></i>
-                    {{Auth::user()->name}}
-                     <i class="fa fa-caret-down"></i>
-                  </a>
-                  <ul class="dropdown-menu dropdown-user">
-                      <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                      </li>
-                      <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                      </li>
-                      <li class="divider"></li>
-                      <li><a href="{{route('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                      </li>
-                  </ul>
-              </li>
-          </li>
-
-          @if(Auth::user()->is_admin==1)
-          <li>
-            <a class="amain" href="{{route('admin')}}"><i class="fa fa-unlock-alt"></i> Admin Page</a>
-          </li>
-          @endif
-
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link hvr-icon-pulse-grow" href="{{route('home')}}">Trang Chủ <i class="fa fa-home hvr-icon"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link hvr-pulse-grow" href="{{route('gioithieu')}}">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+         <button type="submit" class="btn btn-default hvr-pulse-grow"><i class="fa fa-search"></i></button>
+      </form>
+    </ul>
+    @if(Auth::check())
+     <ul class="navbar-nav ml-auto">
+    <li>
+        <li class="nav-item dropdown">
+            <a class="nav-link hvr-pulse-grow" data-toggle="dropdown" href="#">  <i class="fa fa-user fa-fw"></i>
+              {{Auth::user()->name}}
+               <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a class="nav-link"  href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                </li>
+                <li><a  class="nav-link" href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                </li>
+                <li class="divider"></li>
+                <li><a class="nav-link" href="{{route('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
             </ul>
-          @else
-			    <ul class="nav navbar-nav pull-right">
-                    <li>
-                        <a class="amain" href="{{route('register')}}">Đăng ký</a>
-                    </li>
-                    <li>
-                        <a class="amain" href="{{route('login')}}">Đăng nhập</a>
-                    </li>
-                </ul>
-        @endif
-            </div>
+        </li>
+    </li>
 
+    @if(Auth::user()->is_admin==1)
+    <li class="nav-item">
+      <a  class="nav-link hvr-pulse-grow" href="{{route('admin')}}"><i class="fa fa-unlock-alt"></i> Admin Page</a>
+    </li>
+    @endif
 
-
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+      </ul>
+    @else
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item hvr-pulse-grow">
+                <a class="nav-link" href="{{route('login')}}">Đăng Nhập</a>
+            </li>
+            <li class="nav-item hvr-pulse-grow">
+                <a class="nav-link" href="{{route('register')}}">Đăng kí</a>
+            </li>
+        </ul>
+  @endif
+      </div>
+  </div>
+  </div>
+</nav>

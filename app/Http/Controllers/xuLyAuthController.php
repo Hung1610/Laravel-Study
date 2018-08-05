@@ -46,6 +46,6 @@ class xuLyAuthController extends Controller
   public function logout(){
     Auth::logout();
     Session::forget('user');
-    return redirect()->route('index');
+    return redirect()->route('home');
   }
 }
