@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SubContentCategory extends Model
 {
     //
-    protected $table = 'sub_content_category';
+    protected $table = 'sub_content_categories';
     public $route = 'sub-content-category';
     public $timestamps = false;
 

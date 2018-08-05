@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Content extends Model
 {
     //
-    protected $table = 'content';
+    protected $table = 'contents';
     public $route = 'content';
     public $timestamps = false;
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ContentCategory extends Model
 {
     //
-    protected $table = 'content_category';
+    protected $table = 'content_categories';
     public    $route = 'content-category';
     public $timestamps = false;
     protected $fillable = [
