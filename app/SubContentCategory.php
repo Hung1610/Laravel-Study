@@ -17,7 +17,7 @@ class SubContentCategory extends Model
         'category',
     ];
     //REALTIONSHIP
-    public function subcontentcategory(){
+    public function content_category(){
         return $this->belongsTo('App\ContentCategory');
     }
     public function contents(){

@@ -16,7 +16,7 @@ class ContentCategory extends Model
     ];
 
     //REALTIONSHIP
-    public function subcontentcategories(){
+    public function sub_content_categories(){
         return $this->hasMany('App\SubContentCategory');
     }
 }
