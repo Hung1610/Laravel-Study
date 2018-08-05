@@ -7,7 +7,7 @@
   </div>
   <!-- /.card-header -->
   <!-- form start -->
-  <form name="frm_content" action="{{ route($model . '.update', $data->id) }}" method="POST">
+  <form name="frm_content" action="{{ route($model . '.update', $data->id) }}" enctype="multipart/form-data" method="POST">
     @csrf
     {{ method_field('PUT') }}
     <div class="card-body">
@@ -25,8 +25,8 @@
       
       {{-- SUB --}}
       <div class="form-group">
-        <label for="sub_category_id">Sub title</label>
-        <select name="sub_category_id" id="sub_category_id" class="form-control">
+        <label for="sub_content_category_id">Sub title</label>
+        <select name="sub_content_category_id" id="sub_content_category_id" class="form-control">
           @foreach($sub as $data_sub)
             <option value="{{ $data_sub->id }}">{{ $data_sub->name }}</option>
           @endforeach
@@ -136,7 +136,7 @@
 
   // SUB-CATEGORY
   $(document).ready(function(){
-      $('#sub_category_id').val('{{ old('sub_category_id', $data->sub_category_id) }}');
+      $('#sub_content_category_id').val('{{ old('sub_content_category_id', $data->sub_content_category_id) }}');
   });
   // END SUB-CATEGORY
 
