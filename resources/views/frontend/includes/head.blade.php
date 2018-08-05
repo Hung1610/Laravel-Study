@@ -9,7 +9,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    
+
     <!-- Custom CSS -->
     <link href="{{asset('css/shop-homepage.css')}}" rel="stylesheet">
     <link href="{{asset('css/my.css')}}" rel="stylesheet">
@@ -26,6 +26,7 @@
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 
 
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

@@ -8,9 +8,9 @@
     <!-- Page Content -->
    <div class="container">
      @include('frontend.includes.left')
-     <div class="col-md-9">
+
        @yield('content')
-     </div>
+
        </div>
        <!-- /.row -->
    </div>

@@ -1,5 +1,10 @@
 @extends('frontend.layouts.default')
 @section('content')
+
+<div class="row">
+<div class="col-md-1">
+</div>
+<div class="col-md-10">
 <div class="alert alert-info" style="text-align:center;margin-bottom: 1%;" role="alert">
   Bản Tin
 </div>
@@ -21,4 +26,7 @@
 		                <!-- end item -->
 					</div>
 	            </div>
+</div>
+</div>
+</div>
 @endsection

@@ -1,5 +1,12 @@
-<!-- slider -->
+
 <!-- Indicators -->
+<div class="row">
+<div class="col-md-1">
+</div>
+
+<div class="col-md-10">
+
+
 <div id="demo" class="carousel slide" data-ride="carousel">
 
   <!-- Indicators -->
@@ -12,13 +19,25 @@
   <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="image/800x300.png" alt="Los Angeles" width="1100" height="500">
+      <img src="image/800x300.png"  alt="Los Angeles">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Tiêu Đề</h5>
+        <p>Nội Dung</p>
+      </div>
     </div>
     <div class="carousel-item">
       <img src="image/800x300.png" alt="Chicago" width="1100" height="500">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>...</h5>
+        <p>...</p>
+      </div>
     </div>
     <div class="carousel-item">
       <img src="image/800x300.png" alt="New York" width="1100" height="500">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>...</h5>
+        <p>...</p>
+      </div>
     </div>
   </div>
 
@@ -33,96 +52,5 @@
         <!-- end slide -->
 
         <div class="space20"></div>
-
-
-        <div class="row main-left">
-
-            <div class="col-md-3 ">
-                <ul class="list-group" id="menu">
-                  <div class="alert alert-success" style="margin-bottom:0%;" role="alert">
-                    Menu
-                  </div>
-
-                    <li href="#" class="list-group-item menu1">
-                    	Level 1
-                    </li>
-                    <ul>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                    </ul>
-
-                    <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
-                    </li>
-                    <ul>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                    </ul>
-
-
-                    <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
-                    </li>
-
-                    <ul>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                    </ul>
-
-
-                    <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
-                    </li>
-                    <ul>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                		<li class="list-group-item">
-                			<a href="#">Level2</a>
-                		</li>
-                    </ul>
-
-                    <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
-                    </li>
-                    <li href="#" class="list-group-item menu1">
-                    	<a href="#">Level 1</a>
-                    </li>
-                </ul>
-            </div>
+</div>
+</div>
