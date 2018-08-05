@@ -7,10 +7,9 @@
   <body>
     @include('frontend.includes.header')
     <!-- Page Content -->
-      <div class="container">
+      <div class="container" style="margin-top: 4%;">
         <div class="row">
         <div class="col-md-9">
-
         <div>
           <p>category :
             <a href="#" class="badge badge-light">some category</a>
