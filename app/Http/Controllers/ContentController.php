@@ -89,7 +89,8 @@ class ContentController extends Controller
      */
     public function show($id)
     {
-        //
+        $this_sub = $this->model->find($id)->sub_content_category;
+        dd($this_sub->content_category);
     }
 
     /**
