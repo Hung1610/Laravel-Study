@@ -116,7 +116,6 @@ class ContentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request->all());
         // DATE
         $date = date('Y-m-d',strtotime($request->content_date));
         $request->merge([
@@ -138,11 +137,12 @@ class ContentController extends Controller
         }
         // END-IMG
 
-        // CREAT MODEL
-        $this->model->update($request->all());
+        // UPDATE MODEL
+        $this->model->find($id)->update($request->all());
         session()->flash('flash_message', 'Cap nhat dữ liệu thành công');
         session()->flash('alert-class', 'alert-success');
-        // END CREAT-MODEL
+        // END UPDATE-MODEL
+        return redirect()->route($this->model->route .'.index');
     }
 
     /**
