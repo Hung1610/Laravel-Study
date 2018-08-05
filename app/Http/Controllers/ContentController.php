@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Content;
 use Auth;
 use App\SubContentCategory;
+use Illuminate\Support\Facades\Storage;
 
 class ContentController extends Controller
 {
@@ -122,7 +123,6 @@ class ContentController extends Controller
         $request->merge([
             'user_id'       => 1,
             'content_date'  => $date,
-            'sub_category_id'       => 1,
         ]);
         // END-DATE
 
@@ -130,7 +130,9 @@ class ContentController extends Controller
         //Kiểm tra file
         if($request->hasFile('thumbnail')){
             $file = $request->thumbnail;
-            $filename = $file->getClientOriginalName();
+            $path = $file->store('thumbnail');
+            $filename = $file->hashName();
+            // dd($file->hashName());
             $request->merge([
                 'img' => 'thumbnail/' . $request->alias. '/' . $filename
                 ]);
