@@ -22,4 +22,13 @@ class Content extends Model
         'user_id',
         'sub_category_id',
     ];
+    
+    //REALTIONSHIP
+    public function subcontentcategory(){
+        return $this->belongsTo('App\SubContentCategory');
+    }
+    
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
 }

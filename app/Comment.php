@@ -15,4 +15,13 @@ class Comment extends Model
         'user_id',
         'content_id',
     ];
+
+    //REALTIONSHIP
+    public function content(){
+        return $this->belongsTo('App\Content');
+    }
+    
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }

@@ -16,4 +16,11 @@ class SubContentCategory extends Model
         'alias',
         'category',
     ];
+    //REALTIONSHIP
+    public function subcontentcategory(){
+        return $this->belongsTo('App\ContentCategory');
+    }
+    public function contents(){
+        return $this->hasMany('App\Content');
+    }
 }
