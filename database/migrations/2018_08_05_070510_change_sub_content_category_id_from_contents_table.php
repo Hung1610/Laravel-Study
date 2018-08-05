@@ -15,7 +15,7 @@ class ChangeSubContentCategoryIdFromContentsTable extends Migration
     {
         Schema::table('contents', function (Blueprint $table) {
 
-           $table->renameColumn('sub_category_id', 'sub_content_cateogry_id');
+           $table->renameColumn('sub_category_id', 'sub_content_category_id');
         });
     }
 
@@ -27,7 +27,7 @@ class ChangeSubContentCategoryIdFromContentsTable extends Migration
     public function down()
     {
         Schema::table('contents', function (Blueprint $table) {
-            //
+            $table->renameColumn('sub_content_category_id', 'sub_category_id');
         });
     }
 }
