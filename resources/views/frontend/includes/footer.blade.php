@@ -9,3 +9,5 @@
    <!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.min.js"></script>
    <script src="js/my.js"></script>
+   <!--owlcarousel-->
+   <script src="{{asset('js/owl.carousel.min.js')}}"></script>
