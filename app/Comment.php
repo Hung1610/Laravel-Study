@@ -9,11 +9,13 @@ class Comment extends Model
     //
     protected $table = 'comments';
     public $route = 'comment';
+    public $timestamps = false;
     
     protected $fillable = [
         'content',
         'user_id',
         'content_id',
+        'parent',
     ];
 
     //REALTIONSHIP

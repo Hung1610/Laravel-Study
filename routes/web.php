@@ -44,7 +44,7 @@ Route::post('checkname','xuLyAuthController@checkName');
 Route::get('dangky','xuLyAuthController@getRegister')->name('register');
 Route::post('dangky','xuLyAuthController@postRegister')->name('postregister');
 Route::post('uploadPhoto','UploadPhotoController@storageImage')->name('uploadPhoto');
-
+Route::post('post-comment', 'mainController@postComment')->name('postComment');
 Route::get('concept', function(){
     return view('frontend-concept.app-concept');
 });
