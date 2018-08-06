@@ -5,9 +5,10 @@
   </head>
   <body>
     @include('frontend.includes.header')
+    @include('frontend.includes.left')
     <!-- Page Content -->
    <div class="container">
-     @include('frontend.includes.left')
+
 
        @yield('content')
 
