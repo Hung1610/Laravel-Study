@@ -43,7 +43,7 @@
         </ul>
         </div>
         <div class="col-md-9">
-        <div style="font-family: 'Tinos', serif;font-size:120%;">
+        <div class="detailcontent" style="font-family: 'Tinos', serif;font-size:120%;">
           {!!$data_content->content!!}
           <p>Nguồn : .... </p>
         </div>

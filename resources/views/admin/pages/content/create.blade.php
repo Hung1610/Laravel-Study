@@ -25,7 +25,7 @@
       {{-- SUB --}}
       <div class="form-group">
         <label>Sub title</label>
-        <select id="sub_category_id" name="sub_category_id" class="form-control">
+        <select id="sub_category_id" name="sub_content_category_id" class="form-control">
             <option value="" disabled selected>Select your option</option>
           @foreach($sub as $data_sub)
             <option value="{{ $data_sub->id }}">{{ $data_sub->name }}</option>
