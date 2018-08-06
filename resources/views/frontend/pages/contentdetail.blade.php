@@ -71,7 +71,9 @@
               <img src="" alt="AVATAR CỰC TO">
             </div>
           <div class="col-md-10">
-            <form class="" action="index.html" method="post">
+            <form class="" action="{{ route('comment.store') }}" method="post">
+              @csrf
+              {{ method_field('POST') }}
               <textarea id="message" name="message"></textarea>
               <input id="commentinput" type="submit" value="Gửi bình luận!" />
             </form>
