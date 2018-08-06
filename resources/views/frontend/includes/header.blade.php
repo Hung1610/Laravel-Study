@@ -3,10 +3,11 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <a href="#menu-toggle" style="margin-right: 42px;" id="menu-toggle"><i class="fa fa-align-justify"></i></a>
   <a class="navbar-brand" href="#">
     <img src="bird.jpg" alt="test" style="width:40px;">
   </a>
-
+  <!-- Menu Toggle Script -->
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
@@ -64,3 +65,45 @@
   </div>
   </div>
 </nav>
+<div id="wrapper">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+          <li class="sidebar-brand">
+              <a href="#">
+              </a>
+          </li>
+          <li>
+              <a href="{{route('home')}}">Trang Chủ</a>
+          </li>
+          <li>
+              <a href="#">About</a>
+          </li>
+          <li>
+              <a href="#">Chi Tiết</a>
+          </li>
+          <li>
+              <a href="#">...</a>
+          </li>
+          <li>
+              <a href="#">...</a>
+          </li>
+          <li>
+              <a href="#">...</a>
+          </li>
+          <li>
+              <a href="#">Contact</a>
+          </li>
+      </ul>
+  </div>
+
+  <!-- /#sidebar-wrapper -->
+
+@push('scripts')
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
+@endpush

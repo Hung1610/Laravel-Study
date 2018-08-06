@@ -17,4 +17,5 @@
    <!-- end Page Content -->
    @include('frontend.includes.footer')
   </body>
+
 </html>
