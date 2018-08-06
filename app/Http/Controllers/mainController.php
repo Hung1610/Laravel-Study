@@ -11,7 +11,7 @@ class mainController extends Controller
       return $this->model=$model;
     }
     public function getTrangChu(){
-      return view('frontend.index',['data_content'=>$this->model::paginate(10)]);
+      return view('frontend.index',['data_content'=>$this->model::paginate(10),'data_slide'=>$this->model::orderBy('content_date','DESC')->take(3)->get()]);
     }
     public function getGioiThieu(){
       return view('frontend.pages.gioithieu');
