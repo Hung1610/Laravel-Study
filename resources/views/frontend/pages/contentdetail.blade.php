@@ -6,7 +6,6 @@
   </head>
   <body>
     @include('frontend.includes.header')
-  </div>
     <!-- Page Content -->
       <div class="container" style="margin-top: 4%;">
         <div class="row">
