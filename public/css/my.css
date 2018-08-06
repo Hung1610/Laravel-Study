@@ -1,6 +1,28 @@
 body {
   overflow-x: hidden;
 }
+.trendcontent img{
+  width: 100%;
+  height: 250px;
+}
+.trendrow{
+  list-style-type: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.trendcontent{
+  float: left;
+  width: 43%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-right: 6%;
+  height: 300px;
+  background-color: #eae9e9;
+}
+.trend_hover:hover{
+  color:red;
+}
 /* Styling Next and Prev buttons */
 .text{
   opacity: 0;

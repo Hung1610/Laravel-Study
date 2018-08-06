@@ -21,6 +21,7 @@ class mainController extends Controller
     public function getAdmin(){
       return view('admin.layouts.app');
     }
+
     // Post comment
     public function postComment(Request $request){
       $content_id = session('content_id');
@@ -36,8 +37,8 @@ class mainController extends Controller
     }
     // End Post-comment
     public function getPageDetail($alias,$id){
-      $content  = Content::find($id);
-      $comments = $content->comments()->where('parent',0)->orderBy('id')->paginate();
+      //dd($this->model::where('is_trend','1')->get());
+      $comments = $this->model::find($id)->comments()->where('parent',0)->orderBy('id')->paginate();
       $count    = $comments->count();
       session()->put('content_id', $id);
       // dd($comments);
@@ -45,6 +46,7 @@ class mainController extends Controller
         'data_content' => $this->model::find($id),
         'comments'     => $comments,
         'count'        => $count,
+        'data_trend_content' => $this->model::where('is_trend','1')->get(),
         ]);
     }
 }

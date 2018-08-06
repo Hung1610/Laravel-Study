@@ -53,14 +53,17 @@
         <p>ads place here </p>
         <p class="baidangtittle">Bài Đăng Nổi Bậc </p>
         <div class="row">
-          <div class="col-md-4">
-            put it here
-          </div>
-          <div class="col-md-4">
-            put it here
-          </div>
-          <div class="col-md-4">
-            put it here
+        <div class="col-md-12">
+        <ul class="trendrow">
+          @foreach($data_trend_content as $key)
+          <li class="trendcontent text-center">
+            <a href="{{ url($key->alias.'/'.$key->id)}}">
+              <img src="{{$key->img}}" alt="">
+            </a>
+            <a class="trend_hover" href="{{ url($key->alias.'/'.$key->id)}}">{{$key->title}}</a>
+          </li>
+          @endforeach
+        </ul>
           </div>
         </div>
         <hr>
@@ -68,7 +71,7 @@
           <p class="binhluantittle">Bình Luận </p>
           <div class="row">
             <div class="col-md-2">
-              <img src="" alt="AVATAR CỰC TO">
+              <img src="" alt="">
             </div>
              {{-- COMMENT --}}
           {{-- COMMENT LIST --}}
@@ -95,12 +98,8 @@
                   </div>
                   @endforeach
                   <!-- /comment -->
-                  <div class="row pt-2">
-                      <div class="col-12">
-                          <a href="" class="btn btn-sm btn-primary">Comment</a>
-                      </div>
-                  </div>
-      
+
+
               </div>
             </div>
         </div>
@@ -108,7 +107,8 @@
       <hr>
       {{-- INSERT comment --}}
       <div class="col-md-10">
-        <form class="" action="{{ route('postComment') }}" method="post">
+        <h3 style="color: black;font-weight: 300;">Ghi bình luận của bạn vào đây</h3>
+        <form class="d-none" id="is_login" action="{{ route('postComment') }}" method="post">
           @csrf
           {{ method_field('POST') }}
           <textarea id="message" name="content"></textarea>
@@ -116,15 +116,29 @@
         </form>
       </div>
        <!-- /.row -->
+      <div class="row">
+      <div class="col-md-3">
+
+      </div>
+      <div class="col-md-6 text-center" id="is_error_login">
+        <div class="alert alert-info">
+          Bạn phải <a href="">đăng nhập</a> để comment ~~
+        </div>
+      </div>
+    </div>
    </div>
    {{-- END-COMMENT --}}
-   
+
    <!-- end Page Content -->
    @include('frontend.includes.footer')
-   
+
   <!-- CK Editor -->
   <script>
     $(document).ready(function(){
+      @if(Auth::check())
+        $('#is_login').removeClass('d-none');
+        $('#is_error_login').addClass('d-none');
+      @endif
       window.scrollTo(500, 0);
     });
   </script>
