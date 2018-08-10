@@ -45,8 +45,8 @@ class SubContentCategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-          'name' => 'unique:sub_content_category',
-          'alias' => 'unique:sub_content_category'
+          'name' => 'unique:sub_content_categories',
+          'alias' => 'unique:sub_content_categories'
         ],[
           'name.unique' => 'Trùng thể loại',
           'alias.unique' => 'Trùng alias'
@@ -54,7 +54,7 @@ class SubContentCategoryController extends Controller
         $data = new $this->model;
         $data->name = $request->name;
         $data->alias = $request->alias;
-        $data->category_id = $request->id_category;
+        $data->content_category_id = $request->id_category;
         $data->save();
         return redirect()->route('sub-content-category.index')->with('thongbao','Thêm thành công!!');
     }
@@ -106,7 +106,7 @@ class SubContentCategoryController extends Controller
         }
         else{
           $this->validate($request,[
-            'alias'=>'unique:content_category'
+            'alias'=>'unique:content_categories'
           ],[
             'alias.unique'=>'Trùng alias'
           ]);
@@ -127,7 +127,7 @@ class SubContentCategoryController extends Controller
         }
         else{
           $this->validate($request,[
-            'name'=>'unique:content_category'
+            'name'=>'unique:content_categories'
           ],[
             'name.unique'=>'Trùng tên thể loại'
           ]);

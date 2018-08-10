@@ -41,8 +41,8 @@ class ContentCategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-          'name'=>'unique:content_category',
-          'alias'=>'unique:content_category'
+          'name'=>'unique:content_categories',
+          'alias'=>'unique:content_categories'
         ],[
           'name.unique'=>'Trùng tên',
           'alias.unique'=>'Trùng thể loại'
@@ -94,7 +94,7 @@ class ContentCategoryController extends Controller
         }
         else{
           $this->validate($request,[
-            'alias'=>'unique:content_category'
+            'alias'=>'unique:content_categories'
           ],[
             'alias.unique'=>'Trùng alias'
           ]);
@@ -113,7 +113,7 @@ class ContentCategoryController extends Controller
         }
         else{
           $this->validate($request,[
-            'name'=>'unique:content_category'
+            'name'=>'unique:content_categories'
           ],[
             'name.unique'=>'Trùng thể loại'
           ]);

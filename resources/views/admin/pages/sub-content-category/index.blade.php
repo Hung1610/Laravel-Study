@@ -23,7 +23,7 @@
         <td>{{ $index+1 }}</td>
         <td>{{ $data->name }}</td>
         <td>{{ $data->alias }}</td>
-        <td>{{ $data->category_id}}</td>
+        <td>{{ $data->content_category_id}}</td>
         <td>
             <a href="{{route('sub-content-category.edit',$data->id)}}"class="btn btn-success btn-margin" title="Sửa">
                 <i class="fa fa-pencil" aria-hidden="true"></i>
